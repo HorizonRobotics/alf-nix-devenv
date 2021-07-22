@@ -3,3 +3,9 @@
 # alf-nix-devenv
 
 The nix-based development environment for [alf])(https://github.com/HorizonRobotics/alf).
+
+To activate the environment with `nix`:
+
+```
+$ nix develop
+```
