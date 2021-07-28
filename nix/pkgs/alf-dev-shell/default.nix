@@ -1,6 +1,10 @@
 # This is a development environment for agent learning framework.
 
-{ mkShell, python3, python-language-server, clang-tools }:
+{ mkShell
+, python3
+, python-language-server
+, clang-tools
+, rsync }:
 
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
@@ -45,6 +49,8 @@ in mkShell rec {
   packages = [
     pythonForAlf
     python-language-server  # From Microsoft, not Palantir
+    rsync # Alf Snapshot needs this
+    clang-tools # For clang-format stuff
   ];
 
   # This is to have a leading python icon to remind the user we are in
