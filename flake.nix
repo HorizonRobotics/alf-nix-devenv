@@ -7,6 +7,10 @@
 
     utils.url = "github:numtide/flake-utils";
     utils.inputs.nixpkgs.follows = "nixpkgs";
+
+    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
+    ml-pkgs.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
@@ -18,10 +22,19 @@
           overlays = [
             # Use this overlay to provide customized python packages
             # for development environment.
-            (import ./nix/overlays/dev.nix)
+            (import ./nix/overlays/dev.nix {
+              inherit (inputs.ml-pkgs.packages."${system}")
+                pytorchWithCuda11
+                torchvisionWithCuda11
+                procgen
+                atari-py-with-rom;
+            })
           ];
         };
     in {
       devShell = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
+      packages = {
+        openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
+      };
     });
 }

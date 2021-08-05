@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "ml-pkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1628200435,
+        "narHash": "sha256-dfiuPSeLhS699655+Y4W8h7/kZV92Scd0O1/kYePHi4=",
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "rev": "43f5f6601e2ebaf9311b218a43129ea51971c2f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1622516815,
@@ -18,6 +41,7 @@
     },
     "root": {
       "inputs": {
+        "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
       }

@@ -1,32 +1,26 @@
+{ pytorchWithCuda11
+, torchvisionWithCuda11
+, procgen
+, atari-py-with-rom
+}:
+
 final: prev: rec {
   python3 = prev.python3.override {
     packageOverrides = pyFinal: pyPrev: rec {
-      pytorchWithCuda11 = pyPrev.pytorchWithCuda.override {
-        cudatoolkit = prev.cudatoolkit_11_2;
-        nccl = prev.nccl_cudatoolkit_11;
-        cudnn = prev.cudnn_cudatoolkit_11_2;
-        magma = prev.magma.override {
-          cudatoolkit = prev.cudatoolkit_11_2;
-        };
-      };
+      cnest = pyFinal.callPackage ../pkgs/cnest {};
 
-      torchvisionWithCuda11 = pyPrev.torchvision.override {
-        pytorch = pytorchWithCuda11;
-      };
+      rectangle-packer = pyFinal.callPackage ../pkgs/rectangle-packer {};
 
-      cnest = prev.python3Packages.callPackage ../pkgs/cnest {};      
+      pybox2d = pyFinal.callPackage ../pkgs/pybox2d {};
 
-      rectangle-packer = prev.python3Packages.callPackage ../pkgs/rectangle-packer {};
+      gin-config = pyFinal.callPackage ../pkgs/gin-config {};
 
-      pybox2d = prev.python3Packages.callPackage ../pkgs/pybox2d {};
+      jedi = pyFinal.callPackage ../pkgs/jedi {};
 
-      atari-py-with-rom = prev.python3Packages.callPackage ../pkgs/atari-py-with-rom {};
+      pudb = pyFinal.callPackage ../pkgs/pudb {};
 
-      gin-config = prev.python3Packages.callPackage ../pkgs/gin-config {};
-
-      jedi = prev.python3Packages.callPackage ../pkgs/jedi {};
-
-      pudb = final.python3Packages.callPackage ../pkgs/pudb {};
+      inherit pytorchWithCuda11 torchvisionWithCuda11
+        procgen atari-py-with-rom;
     };
   };
 
