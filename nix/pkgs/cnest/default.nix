@@ -1,18 +1,23 @@
-{ lib, buildPythonPackage, pybind11 }:
+{ lib
+, buildPythonPackage
+, fetchPypi
+, pybind11
+, poetry
+}:
 
 buildPythonPackage rec {
   pname = "cnest";
-  version = "1.0-trunk";
+  version = "1.0.1";
+  format = "pyproject";
 
-  # TODO(breakds): Split cnest out of alf and create a separate
-  # pacakge out of it.
-  #
-  # The current cnest comes from
-  # https://github.com/HorizonRobotics/alf/tree/236469870d5de74bb504c62c9f1bf1b0d1553b68/alf/nest/cnest
-  src = ./cnest;
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "sha256-zHdVQdgH3E8FLQJ6UkNsbShGsDscz8cW7n6bcgAny0g=";
+  };
 
   buildInputs = [
     pybind11
+    poetry
   ];
 
   doCheck = false;
@@ -20,7 +25,7 @@ buildPythonPackage rec {
   meta = with lib; {
     homepage = "https://github.com/HorizonRobotics/alf/tree/pytorch/alf/nest";
     description = "C++ implementation of several key nest functions that are preformance critical";
-    license = licenses.asl20;
+    license = licenses.mit;
     maintainers = with maintainers; [ breakds ];
   };
 }
