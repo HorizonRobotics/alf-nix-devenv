@@ -27,7 +27,8 @@
                 pytorchWithCuda11
                 torchvisionWithCuda11
                 procgen
-                atari-py-with-rom;
+                atari-py-with-rom
+                pytorchvizWithCuda11;
             })
           ];
         };

@@ -2,6 +2,7 @@
 , torchvisionWithCuda11
 , procgen
 , atari-py-with-rom
+, pytorchvizWithCuda11
 }:
 
 final: prev: rec {
@@ -19,7 +20,7 @@ final: prev: rec {
 
       pudb = pyFinal.callPackage ../pkgs/pudb {};
 
-      inherit pytorchWithCuda11 torchvisionWithCuda11
+      inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
         procgen atari-py-with-rom;
     };
   };
