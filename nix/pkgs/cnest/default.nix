@@ -7,12 +7,12 @@
 
 buildPythonPackage rec {
   pname = "cnest";
-  version = "1.0.1";
+  version = "1.0.4";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-zHdVQdgH3E8FLQJ6UkNsbShGsDscz8cW7n6bcgAny0g=";
+    sha256 = "sha256-TAPQTYjowWlIZWhjv5zXCW0GYF8Z26XeQB5HQ+CXthk=";
   };
 
   buildInputs = [
