@@ -29,6 +29,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       pybox2d
       atari-py-with-rom
       procgen
+      highway-env
       # TODO(breakds): Package torchtext and enable it.
       # torchtext (0.9.1)
       

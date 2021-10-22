@@ -28,7 +28,8 @@
                 torchvisionWithCuda11
                 procgen
                 atari-py-with-rom
-                pytorchvizWithCuda11;
+                pytorchvizWithCuda11
+                highway-env;
             })
           ];
         };
