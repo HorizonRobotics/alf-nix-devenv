@@ -3,7 +3,8 @@
 , procgen
 , atari-py-with-rom
 , pytorchvizWithCuda11
-, highway-env  
+, highway-env
+, metadrive-simulator
 }:
 
 final: prev: rec {
@@ -22,7 +23,7 @@ final: prev: rec {
       pudb = pyFinal.callPackage ../pkgs/pudb {};
 
       inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
-        procgen atari-py-with-rom highway-env;
+        procgen atari-py-with-rom highway-env metadrive-simulator;
     };
   };
 

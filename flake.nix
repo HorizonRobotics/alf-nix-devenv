@@ -29,7 +29,8 @@
                 procgen
                 atari-py-with-rom
                 pytorchvizWithCuda11
-                highway-env;
+                highway-env
+                metadrive-simulator;
             })
           ];
         };
