@@ -38,6 +38,7 @@
       devShell = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
       packages = {
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
+        python-debug-shell = pkgs.callPackage ./nix/pkgs/python-debug-shell {};
       };
     });
 }
