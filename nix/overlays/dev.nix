@@ -7,7 +7,9 @@
 , metadrive-simulator
 }:
 
-final: prev: rec {
+let original-metadrive-simulator = metadrive-simulator;
+    
+in final: prev: rec {
   python3 = prev.python3.override {
     packageOverrides = pyFinal: pyPrev: rec {
       cnest = pyFinal.callPackage ../pkgs/cnest {};
@@ -22,8 +24,13 @@ final: prev: rec {
 
       pudb = pyFinal.callPackage ../pkgs/pudb {};
 
+      # Use the the tqdm altered by this overlay.
+      metadrive-simulator = original-metadrive-simulator.override {
+        inherit (pyFinal) tqdm;
+      };
+
       inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
-        procgen atari-py-with-rom highway-env metadrive-simulator;
+        procgen atari-py-with-rom highway-env;
     };
   };
 
