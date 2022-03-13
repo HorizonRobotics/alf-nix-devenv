@@ -17,7 +17,7 @@ in final: prev: rec {
       rectangle-packer = pyFinal.callPackage ../pkgs/rectangle-packer {};
 
       pybox2d = pyFinal.callPackage ../pkgs/pybox2d {};
-
+      
       gin-config = pyFinal.callPackage ../pkgs/gin-config {};
 
       jedi = pyFinal.callPackage ../pkgs/jedi {};
