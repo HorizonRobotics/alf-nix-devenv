@@ -8,8 +8,8 @@
 
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
-      pytorchWithCuda11
-      torchvisionWithCuda11
+      # pytorchWithCuda11
+      # torchvisionWithCuda11
       numpy pandas absl-py
       gym
       # TODO(breakds): Require pyglet 1.3.2, because higher version
@@ -26,16 +26,16 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       cnest
       fasteners
       rectangle-packer
-      pybox2d
+      # pybox2d
       atari-py-with-rom
       procgen
       highway-env
-      metadrive-simulator
+      # metadrive-simulator
       # TODO(breakds): Package torchtext and enable it.
       # torchtext (0.9.1)
       
       # Dev only packages
-      jupyterlab ipywidgets ipydatawidgets
+      # jupyterlab ipywidgets ipydatawidgets
       matplotlib tqdm
       sphinx_rtd_theme
       yapf
