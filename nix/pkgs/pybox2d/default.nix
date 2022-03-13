@@ -1,29 +1,24 @@
 { lib
 , buildPythonPackage
-, autoPatchelfHook
-, isPy37
-, isPy38
-, stdenv
+, fetchFromGitHub
+, swig2
 }:
-
-assert (isPy37 || isPy38);
 
 buildPythonPackage rec {
   pname = "Box2D";
   version = "2.3.10";
-  format = "wheel";
 
-  src = builtins.fetchurl (import ./wheel-urls.nix {
-    inherit version isPy37 isPy38; });
+  src = fetchFromGitHub {
+    owner = "pybox2d";
+    repo = "pybox2d";
+    rev = "2.3.10";
+    sha256 = "sha256-yjLFvsg8GQLxjN1vtZM9zl+kAmD4+eS/vzRkpj0SCjY=";
+  };
 
-  buildInputs = [
-    stdenv.cc.cc.lib
-  ];
+  nativeBuildInputs = [ swig2 ];
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-  ];
-
+  # tests not included with pypi release
+  doCheck = false;
 
   meta = with lib; {
     homepage = "https://github.com/pybox2d/pybox2d";

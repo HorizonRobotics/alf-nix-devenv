@@ -26,7 +26,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       cnest
       fasteners
       rectangle-packer
-      # pybox2d
+      pybox2d
       atari-py-with-rom
       procgen
       highway-env
