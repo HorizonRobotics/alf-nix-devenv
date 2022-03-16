@@ -2,9 +2,9 @@
 
 { mkShell
 , python3
-, python-language-server
 , clang-tools
-, rsync }:
+, rsync
+, nodePackages }:
 
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
@@ -52,7 +52,7 @@ in mkShell rec {
 
   packages = [
     pythonForAlf
-    python-language-server  # From Microsoft, not Palantir
+    nodePackages.pyright
     rsync # Alf Snapshot needs this
     clang-tools # For clang-format stuff
   ];
