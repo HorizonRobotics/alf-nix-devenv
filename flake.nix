@@ -25,12 +25,13 @@
             (import ./nix/overlays/dev.nix {
               inherit (inputs.ml-pkgs.packages."${system}")
                 pytorchWithCuda11
-                torchvisionWithCuda11
                 procgen
                 atari-py-with-rom
                 pytorchvizWithCuda11
                 highway-env
-                metadrive-simulator;
+                metadrive-simulator
+                preferredCuda
+                preferredCudnn;
             })
           ];
         };

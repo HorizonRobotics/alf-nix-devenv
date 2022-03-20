@@ -1,10 +1,11 @@
 { pytorchWithCuda11
-, torchvisionWithCuda11
 , procgen
 , atari-py-with-rom
 , pytorchvizWithCuda11
 , highway-env
 , metadrive-simulator
+, preferredCuda
+, preferredCudnn
 }:
 
 let original-metadrive-simulator = metadrive-simulator;
@@ -29,8 +30,14 @@ in final: prev: rec {
         inherit (pyFinal) tqdm;
       };
 
-      inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
+      inherit pytorchWithCuda11 pytorchvizWithCuda11
         procgen atari-py-with-rom highway-env;
+
+      torchvisionWithCuda11 = pyFinal.callPackage ../pkgs/torchvision {
+        pytorch = pytorchWithCuda11;
+        cudatoolkit = preferredCuda;
+        cudnn = preferredCudnn;
+      };
     };
   };
 
