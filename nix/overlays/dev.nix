@@ -29,6 +29,10 @@ in final: prev: rec {
         inherit (pyFinal) tqdm;
       };
 
+      einops = pyFinal.callPackage ../pkgs/einops/default.nix {
+        pytorch = pytorchWithCuda11;
+      };
+
       inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
         procgen atari-py-with-rom highway-env;
     };

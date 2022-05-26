@@ -31,6 +31,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       procgen
       highway-env
       metadrive-simulator
+      einops
       # TODO(breakds): Package torchtext and enable it.
       # torchtext (0.9.1)
       
