@@ -1,5 +1,4 @@
 { pytorchWithCuda11
-, torchvisionWithCuda11
 , procgen
 , atari-py-with-rom
 , pytorchvizWithCuda11
@@ -33,7 +32,11 @@ in final: prev: rec {
         pytorch = pytorchWithCuda11;
       };
 
-      inherit pytorchWithCuda11 torchvisionWithCuda11 pytorchvizWithCuda11
+      torchvision101 = pyFinal.callPackage ../pkgs/torchvision {
+        pytorch = pytorchWithCuda11;
+      };      
+
+      inherit pytorchWithCuda11 pytorchvizWithCuda11
         procgen atari-py-with-rom highway-env;
     };
   };
