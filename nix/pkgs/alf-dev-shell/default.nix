@@ -3,6 +3,7 @@
 { mkShell
 , python3
 , clang-tools
+, pre-commit
 , rsync
 , nodePackages }:
 
@@ -27,7 +28,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       fasteners
       rectangle-packer
       pybox2d
-      atari-py-with-rom
+      # atari-py-with-rom
       procgen
       highway-env
       metadrive-simulator
@@ -36,11 +37,10 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # torchtext (0.9.1)
       
       # Dev only packages
-      jupyterlab ipywidgets ipydatawidgets
+      jupyterlab ipywidgets
       matplotlib tqdm
       sphinx_rtd_theme
       yapf
-      pre-commit
       pylint
       pudb
       pytorchvizWithCuda11
@@ -52,6 +52,7 @@ in mkShell rec {
   name = "ALF";
 
   packages = [
+    pre-commit
     pythonForAlf
     nodePackages.pyright
     rsync # Alf Snapshot needs this
