@@ -10,7 +10,7 @@
 let pythonForPPG = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
       pytorchWithCuda11
-      torchvisionWithCuda11
+      torchvision101
       numpy pandas
       gym matplotlib
       mpi4py

@@ -23,6 +23,31 @@
         "type": "github"
       }
     },
+    "ml-pkgs_2": {
+      "inputs": {
+        "nixpkgs": [
+          "tensor-splines-flake",
+          "nixpkgs"
+        ],
+        "utils": [
+          "tensor-splines-flake",
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1654616360,
+        "narHash": "sha256-XlHqcJj1v06R4mnfi+hqqDHVowe+Yj/FjdWrnIZuJ4g=",
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "rev": "3031960388b0dab81fc9e43f91525067479e2449",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1654360807,
@@ -43,7 +68,33 @@
       "inputs": {
         "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
+        "tensor-splines-flake": "tensor-splines-flake",
         "utils": "utils"
+      }
+    },
+    "tensor-splines-flake": {
+      "inputs": {
+        "ml-pkgs": "ml-pkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1654703792,
+        "narHash": "sha256-Nqm2OzKGOK3G5zbOB72g60KjZml5IJ/8o1of8EHSK7o=",
+        "ref": "main",
+        "rev": "8e4549122e3a3c3ce5a987a2a92e3b0b2ec63a11",
+        "revCount": 15,
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
       }
     },
     "utils": {

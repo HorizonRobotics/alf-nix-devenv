@@ -4,10 +4,11 @@
 , pytorchvizWithCuda11
 , highway-env
 , metadrive-simulator
+, tensor-splines
 }:
 
 let original-metadrive-simulator = metadrive-simulator;
-    
+    original-tensor-splines = tensor-splines;
 in final: prev: rec {
   python3 = prev.python3.override {
     packageOverrides = pyFinal: pyPrev: rec {
@@ -38,6 +39,10 @@ in final: prev: rec {
 
       inherit pytorchWithCuda11 pytorchvizWithCuda11
         procgen atari-py-with-rom highway-env;
+
+      tensor-splines = pyFinal.callPackage original-tensor-splines.override {
+        pytorch = pytorchWithCuda11;
+      };
     };
   };
 

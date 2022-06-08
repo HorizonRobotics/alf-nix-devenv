@@ -11,10 +11,14 @@
     ml-pkgs.url = "github:nixvital/ml-pkgs";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
+
+    tensor-splines-flake.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
+    tensor-splines-flake.inputs.nixpkgs.follows = "nixpkgs";
+    tensor-splines-flake.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
-    "x86_64-linux" "i686-linux" "aarch64-linux" "x86_64-darwin"
+    "x86_64-linux"
   ] (system:
     let pkgs = import nixpkgs {
           inherit system;
@@ -30,12 +34,13 @@
                 pytorchvizWithCuda11
                 highway-env
                 metadrive-simulator;
+              tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];
         };
     in {
-      devShell = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
-      packages = {
+      devShells = {
+        default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
       };
     });
