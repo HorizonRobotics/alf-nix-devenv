@@ -34,7 +34,7 @@
                 pytorchvizWithCuda11
                 highway-env
                 metadrive-simulator
-                mujoco-py;
+                mujoco;
               tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];
