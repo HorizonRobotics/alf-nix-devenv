@@ -83,11 +83,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1656637854,
-        "narHash": "sha256-/gT1jCM8S/k2I9BBs2Mb1t2rVPIugx3J6s/Zy8vUcTM=",
+        "lastModified": 1657133966,
+        "narHash": "sha256-NcRvUC5qpx7tFWo/o+2DktB0ka68NzTtDako+EE6gaI=",
         "ref": "main",
-        "rev": "f9e8be6a89ddc48bb9d42e0358e0e43d3f5dc8b4",
-        "revCount": 28,
+        "rev": "f7be80d6b9a40f1d2bb53ffc3f1d42c06fddba2d",
+        "revCount": 29,
         "type": "git",
         "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
       },
