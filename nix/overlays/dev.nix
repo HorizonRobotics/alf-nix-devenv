@@ -5,6 +5,7 @@
 , highway-env
 , metadrive-simulator
 , tensor-splines
+, mujoco-py
 }:
 
 let original-metadrive-simulator = metadrive-simulator;
@@ -38,7 +39,7 @@ in final: prev: rec {
       };      
 
       inherit pytorchWithCuda11 pytorchvizWithCuda11
-        procgen atari-py-with-rom highway-env;
+        procgen atari-py-with-rom highway-env mujoco-py;
 
       tensor-splines = pyFinal.callPackage original-tensor-splines.override {
         pytorch = pytorchWithCuda11;

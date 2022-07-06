@@ -33,7 +33,8 @@
                 atari-py-with-rom
                 pytorchvizWithCuda11
                 highway-env
-                metadrive-simulator;
+                metadrive-simulator
+                mujoco-py;
               tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];
