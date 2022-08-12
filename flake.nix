@@ -8,7 +8,7 @@
     utils.url = "github:numtide/flake-utils";
     utils.inputs.nixpkgs.follows = "nixpkgs";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/alf/22.05";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -35,7 +35,7 @@
                 highway-env
                 metadrive-simulator
                 gym
-                mujoco;
+                matplotlib;
               tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];

@@ -34,7 +34,6 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       metadrive-simulator
       einops
       tensor-splines
-      mujoco
       # TODO(breakds): Package torchtext and enable it.
       # torchtext (0.9.1)
       
