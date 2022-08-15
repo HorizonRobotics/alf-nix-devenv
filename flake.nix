@@ -8,7 +8,7 @@
     utils.url = "github:numtide/flake-utils";
     utils.inputs.nixpkgs.follows = "nixpkgs";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/alf/22.05";
+    ml-pkgs.url = "github:nixvital/ml-pkgs";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -31,11 +31,11 @@
                 pytorchWithCuda11
                 procgen
                 atari-py-with-rom
+                ale-py-with-roms
                 pytorchvizWithCuda11
                 highway-env
                 metadrive-simulator
-                gym
-                matplotlib;
+                gym;
               tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];

@@ -28,7 +28,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       fasteners
       rectangle-packer
       pybox2d
-      atari-py-with-rom
+      ale-py-with-roms
       procgen
       highway-env
       metadrive-simulator
