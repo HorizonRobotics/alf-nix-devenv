@@ -45,6 +45,8 @@ in final: prev: rec {
       tensor-splines = pyFinal.callPackage original-tensor-splines.override {
         pytorch = pytorchWithCuda11;
       };
+
+      pre-commit = pyFinal.callPackage ../pkgs/pre-commit {};
     };
   };
 
