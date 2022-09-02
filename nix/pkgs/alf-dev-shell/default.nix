@@ -3,7 +3,6 @@
 { mkShell
 , python3
 , clang-tools
-, pre-commit
 , rsync
 , nodePackages }:
 
@@ -45,6 +44,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       pylint
       pudb
       pytorchvizWithCuda11
+      pre-commit
     ]);
 
     pythonIcon = "f3e2";
@@ -53,7 +53,6 @@ in mkShell rec {
   name = "ALF";
 
   packages = [
-    pre-commit
     pythonForAlf
     nodePackages.pyright
     rsync # Alf Snapshot needs this
