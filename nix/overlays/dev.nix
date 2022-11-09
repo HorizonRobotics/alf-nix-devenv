@@ -1,11 +1,10 @@
 { pytorchWithCuda11
 , procgen
-, atari-py-with-rom
+# , atari-py-with-rom
 , pytorchvizWithCuda11
 , highway-env
 , metadrive-simulator
 , gym
-, matplotlib
 , tensor-splines
 }:
 
@@ -40,7 +39,7 @@ in final: prev: rec {
       };      
 
       inherit pytorchWithCuda11 pytorchvizWithCuda11
-        procgen atari-py-with-rom highway-env gym matplotlib;
+        procgen highway-env gym;
 
       tensor-splines = pyFinal.callPackage original-tensor-splines.override {
         pytorch = pytorchWithCuda11;

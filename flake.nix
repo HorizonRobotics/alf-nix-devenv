@@ -3,12 +3,12 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=ff639fcd13f4adf5f7699fff135dcba2cac6cf08";
 
     utils.url = "github:numtide/flake-utils";
     utils.inputs.nixpkgs.follows = "nixpkgs";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/alf/22.05";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/22.11";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -30,12 +30,11 @@
               inherit (inputs.ml-pkgs.packages."${system}")
                 pytorchWithCuda11
                 procgen
-                atari-py-with-rom
+                # atari-py-with-rom
                 pytorchvizWithCuda11
                 highway-env
                 metadrive-simulator
-                gym
-                matplotlib;
+                gym;
               tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
             })
           ];
