@@ -2,21 +2,18 @@
 , buildPythonPackage
 , fetchPypi
 , setuptools
-, isPy39  
-, isPy38
-, isPy37 }:
+, python }:
 
-assert (isPy39 || isPy38 || isPy37);
 
-# TODO(breakds): Make this for other systems such as MacOSX and Windows.
-
-buildPythonPackage rec {
+let pyVerNoDot = builtins.replaceStrings [ "." ] [ "" ] python.pythonVersion;
+    
+in buildPythonPackage rec {
   pname = "rectangle-packer";
   version = "2.0.1";
   format = "wheel";
 
   src = builtins.fetchurl (import ./wheel-urls.nix {
-    inherit version isPy37 isPy38 isPy39; });
+    inherit version pyVerNoDot; });
 
   propagatedBuildInputs = [ setuptools ];
 
