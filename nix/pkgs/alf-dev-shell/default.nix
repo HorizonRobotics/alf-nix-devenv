@@ -38,7 +38,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # torchtext (0.9.1)
       
       # Dev only packages
-      jupyterlab ipywidgets
+      # jupyterlab ipywidgets
       matplotlib tqdm
       sphinx_rtd_theme
       yapf
