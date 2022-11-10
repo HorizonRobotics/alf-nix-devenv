@@ -26,14 +26,6 @@ in final: prev: rec {
         inherit (pyFinal) tqdm;
       };
 
-      einops = pyFinal.callPackage ../pkgs/einops/default.nix {
-        pytorch = pytorchWithCuda11;
-      };
-
-      torchvision101 = pyFinal.callPackage ../pkgs/torchvision {
-        pytorch = pytorchWithCuda11;
-      };
-
       torchvision = pyPrev.torchvision.override {
         torch = pytorchWithCuda11;
       };
