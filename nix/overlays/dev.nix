@@ -21,10 +21,6 @@ in final: prev: rec {
       
       gin-config = pyFinal.callPackage ../pkgs/gin-config {};
 
-      jedi = pyFinal.callPackage ../pkgs/jedi {};
-
-      pudb = pyFinal.callPackage ../pkgs/pudb {};
-
       # Use the the tqdm altered by this overlay.
       metadrive-simulator = original-metadrive-simulator.override {
         inherit (pyFinal) tqdm;
