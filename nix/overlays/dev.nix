@@ -18,7 +18,7 @@ in final: prev: rec {
       rectangle-packer = pyFinal.callPackage ../pkgs/rectangle-packer {};
 
       pybox2d = pyFinal.callPackage ../pkgs/pybox2d {};
-      
+
       gin-config = pyFinal.callPackage ../pkgs/gin-config {};
 
       # Use the the tqdm altered by this overlay.
@@ -32,7 +32,11 @@ in final: prev: rec {
 
       torchvision101 = pyFinal.callPackage ../pkgs/torchvision {
         pytorch = pytorchWithCuda11;
-      };      
+      };
+
+      torchvision = pyPrev.torchvision.override {
+        torch = pytorchWithCuda11;
+      };
 
       inherit pytorchWithCuda11 pytorchvizWithCuda11
         procgen highway-env gym;

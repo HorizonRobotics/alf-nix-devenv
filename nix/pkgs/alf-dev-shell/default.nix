@@ -9,7 +9,7 @@
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
       pytorchWithCuda11
-      torchvision101
+      torchvision
       numpy pandas absl-py
       gym
       # TODO(breakds): Require pyglet 1.3.2, because higher version
@@ -38,7 +38,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # torchtext (0.9.1)
       
       # Dev only packages
-      # jupyterlab ipywidgets
+      jupyterlab ipywidgets
       matplotlib tqdm
       sphinx_rtd_theme
       yapf
