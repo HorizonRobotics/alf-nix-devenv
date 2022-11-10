@@ -30,7 +30,7 @@
               inherit (inputs.ml-pkgs.packages."${system}")
                 pytorchWithCuda11
                 procgen
-                # atari-py-with-rom
+                ale-py-with-roms
                 pytorchvizWithCuda11
                 highway-env
                 metadrive-simulator
