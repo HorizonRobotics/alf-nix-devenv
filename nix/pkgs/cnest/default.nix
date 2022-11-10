@@ -3,6 +3,7 @@
 , fetchPypi
 , pybind11
 , poetry
+, setuptools
 }:
 
 buildPythonPackage rec {
@@ -18,6 +19,7 @@ buildPythonPackage rec {
   buildInputs = [
     pybind11
     poetry
+    setuptools
   ];
 
   doCheck = false;
