@@ -32,6 +32,7 @@
                 procgen
                 atari-py-with-rom
                 pytorchvizWithCuda11
+                pytorchLightningWithCuda11
                 highway-env
                 metadrive-simulator
                 gym

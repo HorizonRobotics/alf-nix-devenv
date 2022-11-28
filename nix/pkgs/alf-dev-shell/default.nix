@@ -45,6 +45,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       pylint
       pudb
       pytorchvizWithCuda11
+      pytorchLightningWithCuda11
       pre-commit
     ]);
 
