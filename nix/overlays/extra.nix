@@ -1,7 +1,4 @@
-{ tensor-splines }:
-
-let original-tensor-splines = tensor-splines;
-in final: prev: rec {
+final: prev: rec {
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
     (python-final: python-prev: {
       cnest = python-final.callPackage ../pkgs/cnest {};
@@ -13,10 +10,6 @@ in final: prev: rec {
       gin-config = python-final.callPackage ../pkgs/gin-config {};
 
       pre-commit = python-final.callPackage ../pkgs/pre-commit {};
-
-      tensor-splines = python-final.callPackage original-tensor-splines.override {
-        pytorch = python-final.pytorchWithCuda11;
-      };
     })
   ];
 }

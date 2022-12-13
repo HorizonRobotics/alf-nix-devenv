@@ -11,26 +11,28 @@
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
-    tensor-splines-flake.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
-    tensor-splines-flake.inputs.nixpkgs.follows = "nixpkgs";
-    tensor-splines-flake.inputs.utils.follows = "utils";
+    tensor-splines.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
+    tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
+    tensor-splines.inputs.utils.follows = "utils";
   };
 
-  outputs = { self, nixpkgs, ml-pkgs, ... }@inputs: inputs.utils.lib.eachSystem [
+  outputs = { self, nixpkgs, ... }@inputs: {
+    overlays = {
+      extra = import ./nix/overlays/extra.nix;
+      default = nixpkgs.lib.composeManyExtensions [
+        inputs.ml-pkgs.overlays.torch-family
+        inputs.ml-pkgs.overlays.simulators
+        inputs.tensor-splines.overlays.default
+        self.overlays.extra
+      ];
+    };
+  } // inputs.utils.lib.eachSystem [
     "x86_64-linux"
   ] (system:
     let pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [
-            ml-pkgs.overlays.torch-family
-            ml-pkgs.overlays.simulators
-            # Use this overlay to provide customized python packages
-            # for development environment.
-            (import ./nix/overlays/dev.nix {
-              tensor-splines = inputs.tensor-splines-flake.packages."${system}".default;
-            })
-          ];
+          overlays = [ self.overlays.default ];
         };
     in {
       devShells = {
