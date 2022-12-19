@@ -39,6 +39,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       highway-env
       metadrive-simulator
       mujoco-pybind
+      mujoco-menagerie
       
       # Dev only packages
       jupyterlab ipywidgets
