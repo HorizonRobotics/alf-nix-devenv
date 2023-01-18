@@ -44,6 +44,7 @@
           inherit system;
           config.allowUnfree = true;
           overlays = [
+            inputs.ml-pkgs.overlays.math
             self.overlays.default
             inputs.alf.overlays.default
           ];

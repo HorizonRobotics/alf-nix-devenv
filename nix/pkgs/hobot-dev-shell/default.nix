@@ -9,6 +9,9 @@ mkShell {
   packages = let pythonDevEnv = python3.withPackages (pyPkgs: with pyPkgs; [
     alf
 
+    # Utils
+    numpy-quaternion
+
     # Simulators
     mujoco-pybind
     mujoco-menagerie
