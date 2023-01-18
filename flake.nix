@@ -14,6 +14,8 @@
     tensor-splines.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
     tensor-splines.inputs.utils.follows = "utils";
+
+    alf.url = "github:HorizonRobotics/alf?rev=fa6328118f8dd631325a5058f6241bfad4341e18";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -38,6 +40,14 @@
       devShells = {
         default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
+        hobot-dev = let pkgs' = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            self.overlays.default
+            inputs.alf.overlays.default
+          ];
+        }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {};
       };
     });
 }
