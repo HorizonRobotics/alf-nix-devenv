@@ -15,7 +15,7 @@ mkShell {
     # Simulators
     mujoco-pybind
     mujoco-menagerie
-    dm_control
+    dm-control
 
     # Deveopment Tools
     sphinx
