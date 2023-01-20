@@ -15,7 +15,8 @@
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
     tensor-splines.inputs.utils.follows = "utils";
 
-    alf.url = "github:HorizonRobotics/alf?rev=fa6328118f8dd631325a5058f6241bfad4341e18";
+    # branch = PR/breakds/alf_packaged
+    alf.url = "github:HorizonRobotics/alf?rev=fca6aa84108debe06584b1a6fa2e6ab15c31f207";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -26,6 +27,11 @@
         inputs.ml-pkgs.overlays.simulators
         inputs.tensor-splines.overlays.default
         self.overlays.extra
+      ];
+      hobot = nixpkgs.lib.composeManyExtensions [
+        inputs.ml-pkgs.overlays.math
+        self.overlays.default
+        inputs.alf.overlays.default
       ];
     };
   } // inputs.utils.lib.eachSystem [
@@ -44,9 +50,7 @@
           inherit system;
           config.allowUnfree = true;
           overlays = [
-            inputs.ml-pkgs.overlays.math
-            self.overlays.default
-            inputs.alf.overlays.default
+            self.overlays.hobot
           ];
         }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {};
       };
