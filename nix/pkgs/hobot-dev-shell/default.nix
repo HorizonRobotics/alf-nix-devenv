@@ -1,10 +1,16 @@
 # This is a development environment for Hobot
 
-{ mkShell
+{ lib
+, mkShell
 , python3
-, nodePackages }:
+, nodePackages
+, libGL }:
 
-mkShell {
+let libPath = lib.makeLibraryPath [
+  libGL
+];
+
+in mkShell {
   name = "hobot";
   packages = let pythonDevEnv = python3.withPackages (pyPkgs: with pyPkgs; [
     alf
@@ -31,5 +37,8 @@ mkShell {
   ]); in [
     pythonDevEnv
     nodePackages.pyright
+    libGL
   ];
+
+  LD_LIBRARY_PATH = libPath;
 }
