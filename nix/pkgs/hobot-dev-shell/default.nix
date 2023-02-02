@@ -21,6 +21,7 @@ mkShell {
     sphinx
     sphinx_rtd_theme
     jupyterlab
+    ipywidgets
     yapf
     pylint
     pudb
