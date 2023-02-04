@@ -22,6 +22,7 @@ in mkShell {
     mujoco-pybind
     mujoco-menagerie
     dm-control
+    python-fcl
 
     # Deveopment Tools
     sphinx
