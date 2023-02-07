@@ -42,4 +42,9 @@ in mkShell {
   ];
 
   LD_LIBRARY_PATH = libPath;
+
+  shellHook = ''
+    export PS1="$(echo -e '\uf3e2') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (hobot) \\$ \[$(tput sgr0)\]"
+    export PYTHONPATH="$(pwd):$PYTHONPATH"
+  '';
 }
