@@ -25,6 +25,9 @@ in mkShell {
     dm-control
     python-fcl
 
+    # Physical Robot
+    pyunitree
+
     # Deveopment Tools
     sphinx
     sphinx_rtd_theme

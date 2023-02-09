@@ -181,13 +181,30 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1669833724,
+        "narHash": "sha256-/HEZNyGbnQecrgJnfE8d0WC5c1xuPSD2LUpB6YXlg4c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4d2b37a84fad1091b9de401eb450aae66f1a741e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alf": "alf",
         "ml-pkgs": "ml-pkgs_3",
         "nixpkgs": "nixpkgs_2",
         "tensor-splines": "tensor-splines_2",
-        "utils": "utils_3"
+        "unitree-go1-sdk": "unitree-go1-sdk",
+        "utils": "utils_4"
       }
     },
     "tensor-splines": {
@@ -244,6 +261,25 @@
         "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
       }
     },
+    "unitree-go1-sdk": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "utils": "utils_3"
+      },
+      "locked": {
+        "lastModified": 1675902219,
+        "narHash": "sha256-CDJBkXCcFgrzSoq9XXlnd9gGr4zUDPDbd7yPkUVMMls=",
+        "ref": "refs/heads/main",
+        "rev": "c1734517bf9e0192cfa0aa0ef1744eaac597a364",
+        "revCount": 30,
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
+      }
+    },
     "utils": {
       "locked": {
         "lastModified": 1623875721,
@@ -275,6 +311,21 @@
       }
     },
     "utils_3": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_4": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",

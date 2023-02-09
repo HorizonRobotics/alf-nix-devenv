@@ -17,6 +17,8 @@
 
     # branch = PR/breakds/alf_packaged
     alf.url = "github:HorizonRobotics/alf?rev=fca6aa84108debe06584b1a6fa2e6ab15c31f207";
+
+    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -32,6 +34,7 @@
         inputs.ml-pkgs.overlays.math
         self.overlays.default
         inputs.alf.overlays.default
+        inputs.unitree-go1-sdk.overlays.default
       ];
     };
   } // inputs.utils.lib.eachSystem [
