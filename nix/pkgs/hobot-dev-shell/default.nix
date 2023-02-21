@@ -18,6 +18,7 @@ in mkShell {
 
     # Utils
     numpy-quaternion
+    jinja2
 
     # Simulators
     mujoco-pybind
