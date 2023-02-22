@@ -267,11 +267,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1676591657,
-        "narHash": "sha256-25dWgg2/FBBdXNBonyH875GUTrIA97jjC9PMFCdXLSg=",
+        "lastModified": 1677104529,
+        "narHash": "sha256-5pt+Y6LI7KEtHLG6d7c6AFYtrcq7CS5aH9D5LIZ9Bh4=",
         "ref": "refs/heads/main",
-        "rev": "453a940a7ea1b1e6b0b5d5fa8f9870132cdc6915",
-        "revCount": 40,
+        "rev": "7d760279b737769a8f09495c19af4ec0132db927",
+        "revCount": 50,
         "type": "git",
         "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
       },
