@@ -30,6 +30,7 @@ in mkShell {
     pyunitree
 
     # Deveopment Tools
+    questionary
     sphinx
     sphinx_rtd_theme
     jupyterlab
