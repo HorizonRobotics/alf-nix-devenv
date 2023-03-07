@@ -17,6 +17,7 @@ in mkShell {
     alf
 
     # Utils
+    mediapy  # absl needs it
     numpy-quaternion
     jinja2
 
