@@ -16,6 +16,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # breaks classic control rendering. Or fix the classic control
       # rendering.
       pyglet
+      mediapy  # For rendering
       opencv4
       pathos
       pillow
