@@ -15,7 +15,7 @@
     tensor-splines.inputs.utils.follows = "utils";
 
     # branch = PR/breakds/alf_packaged
-    alf.url = "github:HorizonRobotics/alf?rev=7d37a9ab39d81f94d32c8c4b39741b4911cbedf2";
+    alf.url = "github:HorizonRobotics/alf?rev=0a130fd38523f958ee5d4c62bce3f4c013e5aefe";
 
     unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
   };
