@@ -42,6 +42,10 @@ in mkShell {
     rich
     pytorchvizWithCuda11
     pre-commit
+
+    # Application Libraries (Optional)
+    tkinter
+    websockets
   ]); in [
     pythonDevEnv
     nodePackages.pyright
