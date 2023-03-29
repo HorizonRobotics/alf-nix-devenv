@@ -45,7 +45,7 @@ in mkShell {
 
     # Application Libraries (Optional)
     tkinter
-    websockets
+    websocket-client
   ]); in [
     pythonDevEnv
     nodePackages.pyright
