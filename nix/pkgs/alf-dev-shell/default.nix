@@ -2,7 +2,7 @@
 
 { mkShell
 , python3
-, clang-tools
+, clang-tools_9
 , cpplint
 , rsync
 , nodePackages }:
@@ -64,7 +64,7 @@ in mkShell rec {
     pythonForAlf
     nodePackages.pyright
     rsync # Alf Snapshot needs this
-    clang-tools # For clang-format stuff
+    clang-tools_9 # For clang-format stuff
     cpplint
   ];
 
