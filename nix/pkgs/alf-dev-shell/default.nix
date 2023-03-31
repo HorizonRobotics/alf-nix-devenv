@@ -3,6 +3,7 @@
 { mkShell
 , python3
 , clang-tools
+, cpplint
 , rsync
 , nodePackages }:
 
@@ -64,6 +65,7 @@ in mkShell rec {
     nodePackages.pyright
     rsync # Alf Snapshot needs this
     clang-tools # For clang-format stuff
+    cpplint
   ];
 
   # This is to have a leading python icon to remind the user we are in
