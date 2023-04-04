@@ -5,7 +5,8 @@
 , clang-tools_9
 , cpplint
 , rsync
-, nodePackages }:
+, nodePackages
+, boost }:
 
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
@@ -53,6 +54,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       rich
       pytorchvizWithCuda11
       pre-commit
+      pybind11  # for _penv
     ]);
 
     pythonIcon = "f3e2";
@@ -66,6 +68,7 @@ in mkShell rec {
     rsync # Alf Snapshot needs this
     clang-tools_9 # For clang-format stuff
     cpplint
+    boost  # for _penv
   ];
 
   # This is to have a leading python icon to remind the user we are in
