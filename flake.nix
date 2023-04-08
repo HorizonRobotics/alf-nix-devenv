@@ -13,8 +13,8 @@
     tensor-splines.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
     tensor-splines.inputs.utils.follows = "utils";
+    tensor-splines.inputs.ml-pkgs.follows = "ml-pkgs";
 
-    # branch = PR/breakds/alf_packaged
     alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged";
     alf.inputs.nixpkgs.follows = "nixpkgs";
 
