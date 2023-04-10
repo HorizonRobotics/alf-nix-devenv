@@ -45,6 +45,7 @@ in mkShell {
     pytorchvizWithCuda11
     pre-commit
     bokeh
+    snakeviz
 
     # Application Libraries (Optional)
     tkinter
