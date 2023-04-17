@@ -33,7 +33,6 @@ in mkShell {
     pyunitree
 
     # Deveopment Tools
-    questionary
     sphinx
     sphinx_rtd_theme
     jupyterlab
@@ -50,6 +49,8 @@ in mkShell {
     # Application Libraries (Optional)
     tkinter
     websocket-client
+    questionary
+    click
   ]); in [
     pythonDevEnv
     nodePackages.pyright
