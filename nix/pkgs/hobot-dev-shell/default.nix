@@ -31,6 +31,7 @@ in mkShell {
 
     # Physical Robot
     pyunitree
+    pysagittarius
 
     # Deveopment Tools
     sphinx

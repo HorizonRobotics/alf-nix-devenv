@@ -147,9 +147,31 @@
         "alf": "alf",
         "ml-pkgs": "ml-pkgs_3",
         "nixpkgs": "nixpkgs",
+        "sagittarius-sdk": "sagittarius-sdk",
         "tensor-splines": "tensor-splines_2",
         "unitree-go1-sdk": "unitree-go1-sdk",
-        "utils": "utils_4"
+        "utils": "utils_5"
+      }
+    },
+    "sagittarius-sdk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils_3"
+      },
+      "locked": {
+        "lastModified": 1682033131,
+        "narHash": "sha256-gZcQvHX2A08HFbP/JDYKWMpqYlQRvF+AK74LRiJANek=",
+        "ref": "refs/heads/main",
+        "rev": "cf89107086d5865f34ed0ed80a285c88c8e812cc",
+        "revCount": 46,
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk"
       }
     },
     "tensor-splines": {
@@ -213,7 +235,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "utils": "utils_3"
+        "utils": "utils_4"
       },
       "locked": {
         "lastModified": 1681145339,
@@ -261,6 +283,21 @@
     },
     "utils_3": {
       "locked": {
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_4": {
+      "locked": {
         "lastModified": 1667395993,
         "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
         "owner": "numtide",
@@ -274,7 +311,7 @@
         "type": "github"
       }
     },
-    "utils_4": {
+    "utils_5": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
