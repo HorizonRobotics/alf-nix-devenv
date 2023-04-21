@@ -161,11 +161,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1682033131,
-        "narHash": "sha256-gZcQvHX2A08HFbP/JDYKWMpqYlQRvF+AK74LRiJANek=",
+        "lastModified": 1682036863,
+        "narHash": "sha256-iG7Z//hUAgPvpB7TV6JL6yAGoB+J29yerUp51ce8tjk=",
         "ref": "refs/heads/main",
-        "rev": "cf89107086d5865f34ed0ed80a285c88c8e812cc",
-        "revCount": 46,
+        "rev": "cd000bcc1baa889ee1fff691927d662769251c41",
+        "revCount": 47,
         "type": "git",
         "url": "ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk"
       },
