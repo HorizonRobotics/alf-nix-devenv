@@ -39,6 +39,7 @@ in mkShell {
     jupyterlab
     ipywidgets
     ipympl
+    jupyterlab-widgets
     yapf
     pylint
     pudb
