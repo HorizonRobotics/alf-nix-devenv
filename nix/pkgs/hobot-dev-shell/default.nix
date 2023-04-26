@@ -38,6 +38,7 @@ in mkShell {
     sphinx_rtd_theme
     jupyterlab
     ipywidgets
+    ipympl
     yapf
     pylint
     pudb
