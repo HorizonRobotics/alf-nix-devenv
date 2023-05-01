@@ -9,11 +9,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1681516726,
-        "narHash": "sha256-qKmNBYF9bDZ6P/yge7l4T58yCOa7rQ2LAxwZgYrrC7U=",
+        "lastModified": 1682970209,
+        "narHash": "sha256-RV5dT8A3AbRga1QiZS9ttuRXXeS6zslk0Roz0DtMg7I=",
         "owner": "HorizonRobotics",
         "repo": "alf",
-        "rev": "be102d0f45becaad6751c10888a4ee52708d1b17",
+        "rev": "edc74e080ff21548e0ac2e84ec9ea3068f046dce",
         "type": "github"
       },
       "original": {
