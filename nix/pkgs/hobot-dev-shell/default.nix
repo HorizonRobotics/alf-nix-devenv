@@ -22,10 +22,10 @@ in mkShell {
     jinja2
 
     # Simulators
-    mujoco-pybind-231
+    mujoco-pybind
     mujoco-menagerie
     (dm-control.override {
-      mujoco-pybind = mujoco-pybind-231;
+      mujoco-pybind = mujoco-pybind;
     })
     python-fcl
 
