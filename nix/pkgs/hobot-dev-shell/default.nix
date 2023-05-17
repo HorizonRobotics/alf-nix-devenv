@@ -5,11 +5,12 @@
 , mkShell
 , python3
 , nodePackages
-, libGL }:
+, libGL
+, useLegacyMujoco ? false }:
 
 let libPath = lib.makeLibraryPath [
-  libGL
-];
+      libGL
+    ];
 
 in mkShell {
   name = "hobot";
@@ -22,11 +23,7 @@ in mkShell {
     jinja2
 
     # Simulators
-    mujoco-pybind-231
     mujoco-menagerie
-    (dm-control.override {
-      mujoco-pybind = mujoco-pybind-231;
-    })
     python-fcl
 
     # Physical Robot
@@ -54,7 +51,17 @@ in mkShell {
     websocket-client
     questionary
     click
-  ]); in [
+  ] ++ (
+    if useLegacyMujoco then [
+      mujoco-menagerie
+      mujoco-pybind-231
+      dm-control-109
+    ] else [
+      mujoco-menagerie
+      mujoco-pybind
+      dm-control
+    ]
+  )); in [
     pythonDevEnv
     nodePackages.pyright
     libGL

@@ -60,7 +60,9 @@
           overlays = [
             self.overlays.hobot
           ];
-        }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {};
+        }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
+          useLegacyMujoco = true;
+        };
       };
     });
 }
