@@ -1,5 +1,6 @@
 { dockerTools
 , buildEnv
+, stdenv
 , bash
 , git
 , iputils
@@ -10,7 +11,9 @@
 , openssh
 , curl
 , cacert
-, lsd
+, ncurses
+, libGL
+, useLegacyMujoco ? false
 }:
 
 let runtime-base = dockerTools.buildLayeredImage {
@@ -28,6 +31,8 @@ let runtime-base = dockerTools.buildLayeredImage {
         openssl
         openssh
         curl
+        ncurses  # For the pretty PS1
+        libGL
       ];
 
       config = {
@@ -41,20 +46,26 @@ let runtime-base = dockerTools.buildLayeredImage {
       };
     };
 
+
+
 in dockerTools.buildImage {
   name = "hobot-runtime";
-  tag = "latest";
+  tag = "2023.05.24";
   created = "now";
 
   fromImage = runtime-base;
 
   copyToRoot = buildEnv {
     name = "runtime-base-env";
-    paths = [ lsd ];
+    paths = [];
     pathsToLink = [ "/bin" ];
   };
 
   config = {
     Cmd = [ "/bin/bash" ];
+    Env = [
+      "PS1='\e[33m\w\e[m [\t] \e[31m\\$\e[m '"
+      "LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
+    ];
   };
 }
