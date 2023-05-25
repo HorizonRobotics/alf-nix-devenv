@@ -56,7 +56,7 @@
           inherit system;
           config.allowUnfree = true;
           overlays = [ self.overlays.hobot ];
-        };        
+        };
     in {
       devShells = {
         default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
@@ -66,6 +66,13 @@
         };
       };
 
-      packages.hobot-runtime = pkgs'.callPackage ./nix/pkgs/hobot-runtime {};
+      packages = {
+        hobot-runtime-legacy = pkgs'.callPackage ./nix/pkgs/hobot-runtime {
+          useLegacyMujoco = true;
+        };
+        hobot-runtime = pkgs'.callPackage ./nix/pkgs/hobot-runtime {
+          useLegacyMujoco = false;
+        };
+      };
     });
 }

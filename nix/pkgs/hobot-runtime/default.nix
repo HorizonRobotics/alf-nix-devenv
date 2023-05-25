@@ -2,6 +2,7 @@
 , buildEnv
 , stdenv
 , python3
+, python3Packages
 , bash
 , git
 , iputils
@@ -14,6 +15,7 @@
 , cacert
 , ncurses
 , libGL
+, screen
 , nvitop
 , useLegacyMujoco ? false
 }:
@@ -33,6 +35,7 @@ let runtime-base = dockerTools.buildLayeredImage {
         openssl
         openssh
         curl
+        screen
         ncurses  # For the pretty PS1
         libGL
       ];
@@ -87,9 +90,11 @@ let runtime-base = dockerTools.buildLayeredImage {
       ]
     ));
 
+    version = "2023.05.25";
+
 in dockerTools.buildImage {
   name = "hobot-runtime";
-  tag = "2023.05.24";
+  tag = if useLegacyMujoco then "${version}-legacy" else version;
   created = "now";
 
   fromImage = runtime-base;
@@ -102,9 +107,16 @@ in dockerTools.buildImage {
 
   config = {
     Cmd = [ "/bin/bash" ];
-    Env = [
+    Env = let
+      cudatoolkit = python3Packages.pytorchWithCuda11.cudaPackages.cudatoolkit;
+      cudnn = python3Packages.pytorchWithCuda11.cudaPackages.cudnn;
+    in [
       "PS1=\\e[33m\\w\\e[m [\\t] \\e[31m\\\\$\\e[m "
-      "LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
+      # The following enables talking to nvidia driver on the host with CUDA.
+      # Without them, `torch.cuda.is_available()` will be `False`.
+      "LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:${cudatoolkit}/lib:${cudatoolkit.lib}/lib:${cudnn}/lib:/usr/lib64"
+      "NVIDIA_DRIVER_CAPABILITIES=compute,utility"
+      "NVIDIA_VISIBLE_DEVICES=all"
     ];
   };
 }
