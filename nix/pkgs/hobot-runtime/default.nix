@@ -1,6 +1,7 @@
 { dockerTools
 , buildEnv
 , stdenv
+, python3
 , bash
 , git
 , iputils
@@ -13,6 +14,7 @@
 , cacert
 , ncurses
 , libGL
+, nvitop
 , useLegacyMujoco ? false
 }:
 
@@ -46,7 +48,44 @@ let runtime-base = dockerTools.buildLayeredImage {
       };
     };
 
+    hobot-python-env = python3.withPackages (pyPkgs: with pyPkgs; [
+      alf
 
+      # Utils
+      mediapy  # absl needs it
+      numpy-quaternion
+      jinja2
+
+      # Simulators
+      mujoco-menagerie
+      python-fcl
+
+      # Physical Robot
+      pyunitree
+      pysagittarius
+
+      # Deveopment Tools
+      yapf
+      pylint
+      pudb
+      pytorchvizWithCuda11
+
+      # Application Libraries (Optional)
+      tkinter
+      websocket-client
+      questionary
+      click
+    ] ++ (
+      if useLegacyMujoco then [
+        mujoco-menagerie
+        mujoco-pybind-231
+        dm-control-109
+      ] else [
+        mujoco-menagerie
+        mujoco-pybind
+        dm-control
+      ]
+    ));
 
 in dockerTools.buildImage {
   name = "hobot-runtime";
@@ -57,14 +96,14 @@ in dockerTools.buildImage {
 
   copyToRoot = buildEnv {
     name = "runtime-base-env";
-    paths = [];
+    paths = [ hobot-python-env nvitop ];
     pathsToLink = [ "/bin" ];
   };
 
   config = {
     Cmd = [ "/bin/bash" ];
     Env = [
-      "PS1='\e[33m\w\e[m [\t] \e[31m\\$\e[m '"
+      "PS1=\\e[33m\\w\\e[m [\\t] \\e[31m\\\\$\\e[m "
       "LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
     ];
   };

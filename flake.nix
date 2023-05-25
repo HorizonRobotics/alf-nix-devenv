@@ -50,21 +50,22 @@
           config.allowUnfree = true;
           overlays = [ self.overlays.default ];
         };
+
+        # For hobot development and runtime
+        pkgs' = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [ self.overlays.hobot ];
+        };        
     in {
       devShells = {
         default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
-        hobot-dev = let pkgs' = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [
-            self.overlays.hobot
-          ];
-        }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
+        hobot-dev = pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
           useLegacyMujoco = true;
         };
       };
 
-      packages.hobot-runtime = pkgs.callPackage ./nix/pkgs/hobot-runtime {};
+      packages.hobot-runtime = pkgs'.callPackage ./nix/pkgs/hobot-runtime {};
     });
 }
