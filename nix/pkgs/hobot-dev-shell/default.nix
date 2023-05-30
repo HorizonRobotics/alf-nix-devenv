@@ -27,7 +27,7 @@ in mkShell {
     python-fcl
 
     # Physical Robot
-    pyunitree
+    # pyunitree
     pysagittarius
 
     # Deveopment Tools

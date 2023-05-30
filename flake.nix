@@ -2,11 +2,11 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
 
     utils.url = "github:numtide/flake-utils";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/23.05";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -47,7 +47,12 @@
   ] (system:
     let pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            cudaSupport = true;
+            cudaCapabilities = [ "7.5" "8.6" ];
+            cudaForwardCompat = false;
+          };
           overlays = [ self.overlays.default ];
         };
     in {
@@ -56,7 +61,12 @@
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
         hobot-dev = let pkgs' = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            cudaSupport = true;
+            cudaCapabilities = [ "7.5" "8.6" ];
+            cudaForwardCompat = false;
+          };
           overlays = [
             self.overlays.hobot
           ];

@@ -2,7 +2,7 @@
 , buildPythonPackage
 , fetchPypi
 , pybind11
-, poetry
+, poetry-core
 , setuptools
 }:
 
@@ -18,7 +18,7 @@ buildPythonPackage rec {
 
   buildInputs = [
     pybind11
-    poetry
+    poetry-core
     setuptools
   ];
 
