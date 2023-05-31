@@ -15,7 +15,8 @@ let libPath = lib.makeLibraryPath [
 in mkShell {
   name = "hobot";
   packages = let pythonDevEnv = python3.withPackages (pyPkgs: with pyPkgs; [
-    alf
+    # alf
+    cnest
 
     # Utils
     mediapy  # absl needs it
