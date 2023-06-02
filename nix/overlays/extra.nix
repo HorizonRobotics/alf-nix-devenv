@@ -10,6 +10,9 @@ final: prev: rec {
       gin-config = python-final.callPackage ../pkgs/gin-config {};
 
       pre-commit = python-final.callPackage ../pkgs/pre-commit {};
+
+      # TODO(breakds): Remove this after switched to 23.05
+      scikit-image = python-final.callPackage ../pkgs/scikit-image {};
     })
   ];
 }

@@ -21,6 +21,7 @@ in mkShell {
     mediapy  # absl needs it
     numpy-quaternion
     jinja2
+    scikit-image
 
     # Simulators
     mujoco-menagerie
