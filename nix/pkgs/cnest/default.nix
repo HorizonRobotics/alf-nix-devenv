@@ -2,25 +2,19 @@
 , buildPythonPackage
 , fetchFromGitHub
 , pybind11
-, poetry-core
 , setuptools
 }:
 
 buildPythonPackage rec {
   pname = "cnest";
-  version = "1.0.6";
-  format = "pyproject";
+  version = "1.1.1";
 
   src = fetchFromGitHub {
     owner = "HorizonRobotics";
     repo = pname;
-    rev = "b8322896d8f42c0a155d4bd62ea62eb7687ff507";
-    hash = "sha256-i31oKkrMnYsvogpj1x8fZ4tbusZoaSAwRXTOsp7UdUI=";
+    rev = "b7a62849ac4531225229cff3a5d5f8fc654bda3f";
+    hash = "sha256-TWmB3BbLjlYWPd+qMg26C3ladHDleulIsfhx31xzSn8=";
   };
-
-  nativeBuildInputs = [
-    poetry-core
-  ];
 
   buildInputs = [
     pybind11
