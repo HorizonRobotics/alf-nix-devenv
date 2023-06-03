@@ -56,7 +56,6 @@
           overlays = [ self.overlays.default ];
         };
     in {
-      packages.cnest = pkgs.python3Packages.cnest;
       devShells = {
         default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
         openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
