@@ -71,7 +71,7 @@
             self.overlays.hobot
           ];
         }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
-          useLegacyMujoco = true;
+          useLegacyMujoco = false;
         };
       };
     });
