@@ -22,6 +22,7 @@ in mkShell {
     numpy-quaternion
     jinja2
     scikit-image
+    webcolors
 
     # Simulators
     mujoco-menagerie
