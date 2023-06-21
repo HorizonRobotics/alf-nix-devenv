@@ -6,7 +6,7 @@
 
     utils.url = "github:numtide/flake-utils";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/23.05";
+    ml-pkgs.url = "github:nixvital/ml-pkgs";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
