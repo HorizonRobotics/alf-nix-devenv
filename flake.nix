@@ -23,6 +23,12 @@
 
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
+
+    # For the isaac gym based development environment
+    nixpkgs-2211.url = "github:NixOS/nixpkgs?rev=ac455609648554cf2fb40d9d1ce030202b0921b7";
+    ml-pkgs-isaac.url = "github:nixvital/ml-pkgs/dev/isaac/22.11";
+    ml-pkgs-isaac.inputs.nixpkgs.follows = "nixpkgs-2211";
+    ml-pkgs-isaac.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -73,6 +79,23 @@
         }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
           useLegacyMujoco = false;
         };
+
+        # For Isaac Gym
+        isaac-dev = let pkgs' = import inputs.nixpkgs-2211 {
+          inherit system;
+          config = {
+            allowUnfree = true;
+            cudaSupport = true;
+            cudaCapabilities = [ "7.5" "8.6" ];
+            cudaForwardCompat = false;
+          };
+          overlays = [
+            self.overlays.extra
+            inputs.ml-pkgs-isaac.overlays.torch-family
+            inputs.ml-pkgs-isaac.overlays.simulators
+            inputs.ml-pkgs-isaac.overlays.math
+          ];
+        }; in pkgs'.callPackage ./nix/pkgs/isaac-dev {};
       };
     });
 }

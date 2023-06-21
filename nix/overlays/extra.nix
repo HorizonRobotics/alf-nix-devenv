@@ -10,6 +10,11 @@ final: prev: rec {
       gin-config = python-final.callPackage ../pkgs/gin-config {};
 
       pre-commit = python-final.callPackage ../pkgs/pre-commit {};
+
+      isaac-gym = python-final.callPackage ../pkgs/isaac-gym {
+        pytorch = python-final.pytorchWithCuda11;
+        torchvision = python-final.torchvisionWithCuda11;
+      };
     })
   ];
 }

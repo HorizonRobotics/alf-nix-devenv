@@ -74,6 +74,30 @@
         "type": "github"
       }
     },
+    "ml-pkgs-isaac": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-2211"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1687310102,
+        "narHash": "sha256-Bvx4jpIRjtjLy7W6O8JCl3fmOySJ4IK/p4NqUGSouTA=",
+        "owner": "nixvital",
+        "repo": "ml-pkgs",
+        "rev": "d06583384123c67eb74530419ef2126fe8deeb17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixvital",
+        "ref": "dev/isaac/22.11",
+        "repo": "ml-pkgs",
+        "type": "github"
+      }
+    },
     "ml-pkgs_2": {
       "inputs": {
         "nixpkgs": [
@@ -143,11 +167,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-2211": {
+      "locked": {
+        "lastModified": 1661982963,
+        "narHash": "sha256-mgSm3FkF3+IXcnwmvnLHjzmZbCPVp825J4Xa8ZWuD00=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ac455609648554cf2fb40d9d1ce030202b0921b7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ac455609648554cf2fb40d9d1ce030202b0921b7",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alf": "alf",
         "ml-pkgs": "ml-pkgs_3",
+        "ml-pkgs-isaac": "ml-pkgs-isaac",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-2211": "nixpkgs-2211",
         "sagittarius-sdk": "sagittarius-sdk",
         "tensor-splines": "tensor-splines_2",
         "unitree-go1-sdk": "unitree-go1-sdk",
