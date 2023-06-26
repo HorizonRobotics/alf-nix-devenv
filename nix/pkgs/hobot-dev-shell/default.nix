@@ -6,7 +6,8 @@
 , python3
 , nodePackages
 , libGL
-, useLegacyMujoco ? false }:
+, useLegacyMujoco ? false
+, withRealSense ? true}:
 
 let libPath = lib.makeLibraryPath [
       libGL
@@ -53,6 +54,9 @@ in mkShell {
     websocket-client
     questionary
     click
+
+    # Deployment
+    pyrealsense2WithoutCuda
   ] ++ (
     if useLegacyMujoco then [
       mujoco-menagerie
