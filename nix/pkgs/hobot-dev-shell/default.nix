@@ -31,6 +31,7 @@ in mkShell {
 
     # Physical Robot
     pyunitree
+    pyrealsense2WithoutCuda    
 
     # Deveopment Tools
     questionary
