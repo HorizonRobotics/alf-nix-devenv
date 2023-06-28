@@ -28,6 +28,7 @@ in mkShell {
     # Simulators
     mujoco-menagerie
     python-fcl
+    sapien
 
     # Physical Robot
     # pyunitree
