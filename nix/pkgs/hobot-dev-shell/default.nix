@@ -58,6 +58,7 @@ in mkShell {
 
     # Deployment
     pyrealsense2WithoutCuda
+    real-sense-sensor
   ] ++ (
     if useLegacyMujoco then [
       mujoco-menagerie

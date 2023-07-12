@@ -47,6 +47,30 @@
         "type": "github"
       }
     },
+    "librealsensex": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689191156,
+        "narHash": "sha256-3L+M3Bw5PZK+9HQt1F8JXp3FgjOVgYp8eHeA97e9Y7Q=",
+        "owner": "HorizonRoboticsInternal",
+        "repo": "librealsense",
+        "rev": "e28ef57016fc71985040e92e604914323fdf8ffe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HorizonRoboticsInternal",
+        "ref": "PR/breakds/real_sense_sensor",
+        "repo": "librealsense",
+        "type": "github"
+      }
+    },
     "ml-pkgs": {
       "inputs": {
         "nixpkgs": [
@@ -145,6 +169,7 @@
     "root": {
       "inputs": {
         "alf": "alf",
+        "librealsensex": "librealsensex",
         "ml-pkgs": "ml-pkgs_3",
         "nixpkgs": "nixpkgs",
         "sagittarius-sdk": "sagittarius-sdk",

@@ -23,6 +23,10 @@
 
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
+
+    librealsensex.url = "github:HorizonRoboticsInternal/librealsense/PR/breakds/real_sense_sensor";
+    librealsensex.inputs.nixpkgs.follows = "nixpkgs";
+    librealsensex.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -40,6 +44,14 @@
         inputs.alf.overlays.default
         inputs.unitree-go1-sdk.overlays.default
         inputs.sagittarius-sdk.overlays.default
+        inputs.librealsensex.overlays.default
+        (final: prev: {
+          pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+            (python-final: python-prev: {
+              real-sense-sensor = python-final.callPackage ./nix/pkgs/real-sense-sensor {};
+            })
+          ];
+        })
       ];
     };
   } // inputs.utils.lib.eachSystem [
