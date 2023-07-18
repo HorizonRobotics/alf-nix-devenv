@@ -55,6 +55,7 @@ in mkShell {
     websocket-client
     questionary
     click
+    loguru
 
     # Deployment
     pyrealsense2WithoutCuda
