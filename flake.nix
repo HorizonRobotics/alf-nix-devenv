@@ -17,7 +17,7 @@
     # branch = PR/breakds/alf_packaged
     alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged";
 
-    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
+    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk?ref=le/dev";
     unitree-go1-sdk.inputs.nixpkgs.follows = "nixpkgs";
 
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
