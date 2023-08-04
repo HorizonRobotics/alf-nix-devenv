@@ -6,6 +6,7 @@
 , python3
 , nodePackages
 , libGL
+, libGLU
 , useLegacyMujoco ? false
 , withRealSense ? true}:
 
@@ -74,14 +75,14 @@ in mkShell {
     pythonDevEnv
     nodePackages.pyright
     libGL
+    libGLU
   ];
 
   LD_LIBRARY_PATH = libPath;
 
   shellHook = ''
     export PS1="$(echo -e '\uf3e2') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (hobot) \\$ \[$(tput sgr0)\]"
-    # Manually set where to look for libstdc++.so.6
-    export LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=${libGLU}/lib:${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH
     export PYTHONPATH="$(pwd):$PYTHONPATH"
   '';
 }
