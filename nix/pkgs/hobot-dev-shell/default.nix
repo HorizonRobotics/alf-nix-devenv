@@ -7,6 +7,7 @@
 , nodePackages
 , libGL
 , libGLU
+, cpplint
 , useLegacyMujoco ? false
 , withRealSense ? true}:
 
@@ -74,6 +75,7 @@ in mkShell {
   )); in [
     pythonDevEnv
     nodePackages.pyright
+    cpplint
     libGL
     libGLU
   ];
