@@ -36,6 +36,9 @@ in mkShell {
     # pyunitree
     pysagittarius
 
+    # Models
+    LIV-robotics
+
     # Deveopment Tools
     sphinx
     sphinx_rtd_theme
