@@ -19,6 +19,7 @@ in mkShell {
   name = "hobot";
   packages = let pythonDevEnv = python3.withPackages (pyPkgs: with pyPkgs; [
     alf
+    pybind11
 
     # Utils
     mediapy  # absl needs it
