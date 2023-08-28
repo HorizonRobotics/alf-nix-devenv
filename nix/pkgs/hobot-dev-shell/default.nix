@@ -5,16 +5,20 @@
 , mkShell
 , python3
 , nodePackages
-, libGL }:
+, libGL
+, libGLU
+, cpplint
+}:
 
 let libPath = lib.makeLibraryPath [
-  libGL
-];
+      libGL
+    ];
 
 in mkShell {
   name = "hobot";
   packages = let pythonDevEnv = python3.withPackages (pyPkgs: with pyPkgs; [
     alf
+    pybind11
 
     # Utils
     mediapy  # absl needs it
@@ -50,10 +54,15 @@ in mkShell {
     # Application Libraries (Optional)
     tkinter
     websocket-client
+    questionary
+    click
+    loguru
   ]); in [
     pythonDevEnv
     nodePackages.pyright
+    cpplint
     libGL
+    libGLU
   ];
 
   LD_LIBRARY_PATH = libPath;
