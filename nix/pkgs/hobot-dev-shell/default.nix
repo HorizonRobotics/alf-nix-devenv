@@ -8,6 +8,7 @@
 , libGL
 , libGLU
 , cpplint
+, cmake
 }:
 
 let libPath = lib.makeLibraryPath [
@@ -63,6 +64,7 @@ in mkShell {
     cpplint
     libGL
     libGLU
+    cmake
   ];
 
   LD_LIBRARY_PATH = libPath;
