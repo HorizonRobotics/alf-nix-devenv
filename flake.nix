@@ -67,11 +67,8 @@
           };
           overlays = [ self.overlays.default ];
         };
-    in {
-      devShells = {
-        default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
-        openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
-        hobot-dev = let pkgs' = import nixpkgs {
+
+        pkgs-hobot = import nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;
@@ -82,9 +79,26 @@
           overlays = [
             self.overlays.hobot
           ];
-        }; in pkgs'.callPackage ./nix/pkgs/hobot-dev-shell {
+        };
+    in {
+      devShells = {
+        default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
+        openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
+        hobot-dev = pkgs-hobot.callPackage ./nix/pkgs/hobot-dev-shell {
           useLegacyMujoco = false;
         };
       };
+
+      packages = {
+        # The following are the docker images for Hobot runtime. They are
+        # currently under active development.
+        hobot-runtime-legacy = pkgs-hobot.callPackage ./nix/pkgs/hobot-runtime {
+          useLegacyMujoco = true;
+        };
+        hobot-runtime = pkgs-hobot.callPackage ./nix/pkgs/hobot-runtime {
+          useLegacyMujoco = false;
+        };
+      };
+      
     });
 }
