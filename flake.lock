@@ -55,11 +55,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694631452,
-        "narHash": "sha256-k8QNlb9d3jDERLk2wlKzWZS/rcW7UopfDRgRASJ9Hok=",
+        "lastModified": 1694637030,
+        "narHash": "sha256-QRRokqDfiiqe29jcOXAPTvV64XY2XYG9JcxrU82ofLQ=",
         "owner": "HorizonRoboticsInternal",
         "repo": "librealsense",
-        "rev": "9f967e7f328a50116f9e0cce2011ce051401dc13",
+        "rev": "6d47633270e5d415e3dfceb2c59aac133d307efe",
         "type": "github"
       },
       "original": {
