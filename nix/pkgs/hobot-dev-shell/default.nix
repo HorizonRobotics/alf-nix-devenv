@@ -62,6 +62,8 @@ in mkShell {
     questionary
     click
     loguru
+    wget
+    xmltodict
 
     # Deployment
     pyrealsense2WithoutCuda
