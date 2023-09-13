@@ -64,7 +64,7 @@
       },
       "original": {
         "owner": "HorizonRoboticsInternal",
-        "ref": "PR/breakds/real_sense_sensor",
+        "ref": "le/dev",
         "repo": "librealsense",
         "type": "github"
       }
