@@ -23,7 +23,7 @@
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
 
-    librealsensex.url = "github:HorizonRoboticsInternal/librealsense/PR/breakds/real_sense_sensor";
+    librealsensex.url = "github:HorizonRoboticsInternal/librealsense/le/dev";
     librealsensex.inputs.nixpkgs.follows = "nixpkgs";
     librealsensex.inputs.utils.follows = "utils";
   };
