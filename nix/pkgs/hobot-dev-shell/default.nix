@@ -8,6 +8,8 @@
 , libGL
 , libGLU
 , cpplint
+, cmake
+, ffmpeg-full
 , useLegacyMujoco ? false
 , withRealSense ? true}:
 
@@ -84,6 +86,8 @@ in mkShell {
     cpplint
     libGL
     libGLU
+    cmake
+    ffmpeg-full
   ];
 
   LD_LIBRARY_PATH = libPath;
