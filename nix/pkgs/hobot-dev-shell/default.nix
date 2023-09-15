@@ -9,6 +9,7 @@
 , libGLU
 , cpplint
 , cmake
+, ffmpeg-full
 }:
 
 let libPath = lib.makeLibraryPath [
@@ -67,6 +68,7 @@ in mkShell {
     libGL
     libGLU
     cmake
+    ffmpeg-full
   ];
 
   LD_LIBRARY_PATH = libPath;
