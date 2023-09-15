@@ -58,6 +58,8 @@ in mkShell {
     questionary
     click
     loguru
+    wget
+    xmltodict
   ]); in [
     pythonDevEnv
     nodePackages.pyright
