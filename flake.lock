@@ -1,52 +1,5 @@
 {
   "nodes": {
-    "alf": {
-      "inputs": {
-        "alf-devenv": "alf-devenv",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "utils": "utils_2"
-      },
-      "locked": {
-        "lastModified": 1694815598,
-        "narHash": "sha256-V9Af1fHkW/ZrLc0rl0Rsj8BSsNUHCrMIjuWk9D4IbH0=",
-        "owner": "HorizonRobotics",
-        "repo": "alf",
-        "rev": "51c086bfa1207d8e4f37a4c0babb6da02b2143b7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HorizonRobotics",
-        "ref": "PR/breakds/alf_packaged",
-        "repo": "alf",
-        "type": "github"
-      }
-    },
-    "alf-devenv": {
-      "inputs": {
-        "ml-pkgs": "ml-pkgs",
-        "nixpkgs": [
-          "alf",
-          "nixpkgs"
-        ],
-        "tensor-splines": "tensor-splines",
-        "utils": "utils"
-      },
-      "locked": {
-        "lastModified": 1671474064,
-        "narHash": "sha256-mS6YpitjIu1/Bid8gMYwIic/BFsYcvU3WhvZF9ByJpY=",
-        "owner": "HorizonRobotics",
-        "repo": "alf-nix-devenv",
-        "rev": "3fa299ce42beec82e4e0c0adced0016e9e39cf37",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HorizonRobotics",
-        "repo": "alf-nix-devenv",
-        "type": "github"
-      }
-    },
     "librealsensex": {
       "inputs": {
         "nixpkgs": [
@@ -74,62 +27,6 @@
     "ml-pkgs": {
       "inputs": {
         "nixpkgs": [
-          "alf",
-          "alf-devenv",
-          "nixpkgs"
-        ],
-        "utils": [
-          "alf",
-          "alf-devenv",
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1671437160,
-        "narHash": "sha256-7De5jl7od+gdBCCSfHCYW+n2K6LIgHZq2NfhNzvD/XI=",
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "rev": "30cd0b98732f5b79d9d2b3057d68378828abcc7f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "type": "github"
-      }
-    },
-    "ml-pkgs_2": {
-      "inputs": {
-        "nixpkgs": [
-          "alf",
-          "alf-devenv",
-          "tensor-splines",
-          "nixpkgs"
-        ],
-        "utils": [
-          "alf",
-          "alf-devenv",
-          "tensor-splines",
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1670952954,
-        "narHash": "sha256-/uKVm5FRDHm0hEeglhtnscyIyn2D6XN2Q64wIrzdcJA=",
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "rev": "e6dbbc94f02397beb17ba935a33010cdb27c4056",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixvital",
-        "repo": "ml-pkgs",
-        "type": "github"
-      }
-    },
-    "ml-pkgs_3": {
-      "inputs": {
-        "nixpkgs": [
           "nixpkgs"
         ],
         "utils": [
@@ -137,11 +34,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1692640605,
-        "narHash": "sha256-8DXyYS/D/atdsiISw6bKqXRN5k4yBtAu43hA+NSNU8I=",
+        "lastModified": 1694575832,
+        "narHash": "sha256-DaYaDRN0Bd+zbHcoEjOQZI9wLMRv6093ROUjJacj/dk=",
         "owner": "nixvital",
         "repo": "ml-pkgs",
-        "rev": "7af8a6ca5e258dba4c0858668fd6b6739e57e5dc",
+        "rev": "f72b89a04600dd74b953958d4d0cad9298e94225",
         "type": "github"
       },
       "original": {
@@ -168,14 +65,13 @@
     },
     "root": {
       "inputs": {
-        "alf": "alf",
         "librealsensex": "librealsensex",
-        "ml-pkgs": "ml-pkgs_3",
+        "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "sagittarius-sdk": "sagittarius-sdk",
-        "tensor-splines": "tensor-splines_2",
+        "tensor-splines": "tensor-splines",
         "unitree-go1-sdk": "unitree-go1-sdk",
-        "utils": "utils_5"
+        "utils": "utils"
       }
     },
     "sagittarius-sdk": {
@@ -183,7 +79,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "utils": "utils_3"
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1682036863,
@@ -201,35 +99,6 @@
     },
     "tensor-splines": {
       "inputs": {
-        "ml-pkgs": "ml-pkgs_2",
-        "nixpkgs": [
-          "alf",
-          "alf-devenv",
-          "nixpkgs"
-        ],
-        "utils": [
-          "alf",
-          "alf-devenv",
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1670955265,
-        "narHash": "sha256-Qa6aZpFJogFXN7QJ5GT1LQem3cD9+TNoi4L5zoPt6C0=",
-        "ref": "main",
-        "rev": "e19c144d2d1906463e599e3261388c52e417924a",
-        "revCount": 32,
-        "type": "git",
-        "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
-      },
-      "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
-      }
-    },
-    "tensor-splines_2": {
-      "inputs": {
         "ml-pkgs": [
           "ml-pkgs"
         ],
@@ -241,11 +110,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670955265,
-        "narHash": "sha256-Qa6aZpFJogFXN7QJ5GT1LQem3cD9+TNoi4L5zoPt6C0=",
+        "lastModified": 1694817724,
+        "narHash": "sha256-OpKxNrFlt3GAxh8X4SPrej879m+hufBs+Ue4piOmHKU=",
         "ref": "main",
-        "rev": "e19c144d2d1906463e599e3261388c52e417924a",
-        "revCount": 32,
+        "rev": "f7f54e59200e537120aa069fd9aff44b31e1dd9f",
+        "revCount": 33,
         "type": "git",
         "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
       },
@@ -260,7 +129,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "utils": "utils_4"
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
         "lastModified": 1681145339,
@@ -277,66 +148,6 @@
       }
     },
     "utils": {
-      "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_2": {
-      "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_3": {
-      "locked": {
-        "lastModified": 1678901627,
-        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_4": {
-      "locked": {
-        "lastModified": 1667395993,
-        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_5": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",

@@ -15,14 +15,13 @@
     tensor-splines.inputs.utils.follows = "utils";
     tensor-splines.inputs.ml-pkgs.follows = "ml-pkgs";
 
-    alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged";
-    alf.inputs.nixpkgs.follows = "nixpkgs";
-
     unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
     unitree-go1-sdk.inputs.nixpkgs.follows = "nixpkgs";
+    unitree-go1-sdk.inputs.utils.follows = "utils";
 
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
+    sagittarius-sdk.inputs.utils.follows = "utils";
 
     librealsensex.url = "github:HorizonRoboticsInternal/librealsense/PR/breakds/real_sense_sensor";
     librealsensex.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,16 +31,15 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     overlays = {
       extra = import ./nix/overlays/extra.nix;
-      default = nixpkgs.lib.composeManyExtensions [
+      alf = nixpkgs.lib.composeManyExtensions [
         inputs.ml-pkgs.overlays.torch-family
         inputs.ml-pkgs.overlays.simulators
         inputs.tensor-splines.overlays.default
         self.overlays.extra
       ];
       hobot = nixpkgs.lib.composeManyExtensions [
+        self.overlays.alf
         inputs.ml-pkgs.overlays.math
-        self.overlays.default
-        inputs.alf.overlays.default
         inputs.unitree-go1-sdk.overlays.default
         inputs.sagittarius-sdk.overlays.default
         inputs.librealsensex.overlays.default
@@ -49,6 +47,7 @@
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
             (python-final: python-prev: {
               real-sense-sensor = python-final.callPackage ./nix/pkgs/real-sense-sensor {};
+              alf = python-final.callPackage ./nix/pkgs/alf {};
             })
           ];
         })
@@ -57,7 +56,7 @@
   } // inputs.utils.lib.eachSystem [
     "x86_64-linux"
   ] (system:
-    let pkgs = import nixpkgs {
+    let pkgs-alf = import nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;
@@ -65,7 +64,7 @@
             cudaCapabilities = [ "7.5" "8.6" ];
             cudaForwardCompat = false;
           };
-          overlays = [ self.overlays.default ];
+          overlays = [ self.overlays.alf ];
         };
 
         pkgs-hobot = import nixpkgs {
@@ -82,8 +81,7 @@
         };
     in {
       devShells = {
-        default = pkgs.callPackage ./nix/pkgs/alf-dev-shell {};
-        openai-ppg-dev = pkgs.callPackage ./nix/pkgs/openai-ppg-devenv {};
+        alf-dev = pkgs-alf.callPackage ./nix/pkgs/alf-dev-shell {};
         hobot-dev = pkgs-hobot.callPackage ./nix/pkgs/hobot-dev-shell {
           useLegacyMujoco = false;
         };
