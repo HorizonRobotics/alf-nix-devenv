@@ -34,8 +34,8 @@ in mkShell {
     sapien
 
     # Physical Robot
-    # pyunitree
-    pysagittarius
+    pyunitree
+    pyrealsense2WithoutCuda
 
     # Models
     LIV-robotics

@@ -48,6 +48,9 @@
             (python-final: python-prev: {
               real-sense-sensor = python-final.callPackage ./nix/pkgs/real-sense-sensor {};
               alf = python-final.callPackage ./nix/pkgs/alf {};
+              opencv4 = python-prev.opencv4.override {
+                enableCuda = false;
+              };
             })
           ];
         })
