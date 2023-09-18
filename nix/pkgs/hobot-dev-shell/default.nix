@@ -59,6 +59,7 @@ in mkShell {
     questionary
     click
     loguru
+    LIV-robotics==0.1.5
     wget
     xmltodict
   ]); in [
