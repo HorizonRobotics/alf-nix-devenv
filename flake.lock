@@ -134,15 +134,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1681145339,
-        "narHash": "sha256-pR40AG409bNn+M+vJQxYJMcGBAP+dcmrKsFyRsTu3yc=",
-        "ref": "refs/heads/main",
-        "rev": "5687e1a4f5743f12d276e10828890801431d755f",
-        "revCount": 59,
+        "lastModified": 1695427422,
+        "narHash": "sha256-YoZ6i4pHyC6V6UbCsJy2if2DrRAQLtdtwIdQxyJ4ZYo=",
+        "ref": "PR/breakds/simplify_comm",
+        "rev": "524c4bdd49b33cc7e45bdbc9a6250eda88cd92af",
+        "revCount": 77,
         "type": "git",
         "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
       },
       "original": {
+        "ref": "PR/breakds/simplify_comm",
         "type": "git",
         "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
       }
