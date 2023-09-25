@@ -15,7 +15,7 @@
     tensor-splines.inputs.utils.follows = "utils";
     tensor-splines.inputs.ml-pkgs.follows = "ml-pkgs";
 
-    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
+    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk?ref=le/dev";
     unitree-go1-sdk.inputs.nixpkgs.follows = "nixpkgs";
     unitree-go1-sdk.inputs.utils.follows = "utils";
 
