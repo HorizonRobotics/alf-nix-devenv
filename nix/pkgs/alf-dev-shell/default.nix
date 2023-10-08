@@ -36,6 +36,8 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # TODO(breakds): Package torchtext and enable it.
       # torchtext (0.9.1)
 
+      pydantic
+
       # Simulators
       atari-py-with-rom
       procgen
