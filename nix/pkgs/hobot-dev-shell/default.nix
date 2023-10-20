@@ -8,7 +8,6 @@
 , libGL
 , libGLU
 , cpplint
-, unitree-cli
 , useLegacyMujoco ? false
 , withRealSense ? true}:
 
@@ -35,7 +34,6 @@ in mkShell {
     sapien
 
     # Physical Robot
-    pyunitree
     pyrealsense2WithoutCuda
 
     # Models
@@ -85,7 +83,6 @@ in mkShell {
     cpplint
     libGL
     libGLU
-    unitree-cli
   ];
 
   LD_LIBRARY_PATH = libPath;

@@ -34,31 +34,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1694575832,
-        "narHash": "sha256-DaYaDRN0Bd+zbHcoEjOQZI9wLMRv6093ROUjJacj/dk=",
+        "lastModified": 1697845123,
+        "narHash": "sha256-XOiaZHyp6ZaldghP26RjyRZsSlEWyXKCNTy8Mubwdg0=",
         "owner": "nixvital",
         "repo": "ml-pkgs",
-        "rev": "f72b89a04600dd74b953958d4d0cad9298e94225",
+        "rev": "e2edc6771f9975ce10e6cc6c3ae419df71adfd08",
         "type": "github"
       },
       "original": {
         "owner": "nixvital",
+        "ref": "dev/23.11",
         "repo": "ml-pkgs",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1693428224,
-        "narHash": "sha256-FWUUlhYqkGEySUD0blTADRiDQ7fw+H1ikivfu88uy+w=",
+        "lastModified": 1697456312,
+        "narHash": "sha256-roiSnrqb5r+ehnKCauPLugoU8S36KgmWraHgRqVYndo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "841889913dfd06a70ffb39f603e29e46f45f0c1a",
+        "rev": "ca012a02bf8327be9e488546faecae5e05d7d749",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-23.05",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -70,7 +71,6 @@
         "nixpkgs": "nixpkgs",
         "sagittarius-sdk": "sagittarius-sdk",
         "tensor-splines": "tensor-splines",
-        "unitree-go1-sdk": "unitree-go1-sdk",
         "utils": "utils"
       }
     },
@@ -122,29 +122,6 @@
         "ref": "main",
         "type": "git",
         "url": "ssh://git@github.com/HorizonRobotics/tensor-splines"
-      }
-    },
-    "unitree-go1-sdk": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "utils": [
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1696283846,
-        "narHash": "sha256-97PSnBH8UmU0zyQwjmCQzjRYUCtxKOe2g2J2/5DoYJI=",
-        "ref": "refs/heads/main",
-        "rev": "d151b7f31a8ddba7d006e9e604c4f4f4096df3d1",
-        "revCount": 78,
-        "type": "git",
-        "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk"
       }
     },
     "utils": {

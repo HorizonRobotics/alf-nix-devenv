@@ -64,7 +64,6 @@ let runtime-base = dockerTools.buildLayeredImage {
       python-fcl
 
       # Physical Robot
-      pyunitree
       pysagittarius
 
       # Deveopment Tools

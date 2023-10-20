@@ -2,11 +2,11 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     utils.url = "github:numtide/flake-utils";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/23.11";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -14,10 +14,6 @@
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
     tensor-splines.inputs.utils.follows = "utils";
     tensor-splines.inputs.ml-pkgs.follows = "ml-pkgs";
-
-    unitree-go1-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/unitree-go1-sdk";
-    unitree-go1-sdk.inputs.nixpkgs.follows = "nixpkgs";
-    unitree-go1-sdk.inputs.utils.follows = "utils";
 
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +36,6 @@
       hobot = nixpkgs.lib.composeManyExtensions [
         self.overlays.alf
         inputs.ml-pkgs.overlays.math
-        inputs.unitree-go1-sdk.overlays.default
         inputs.sagittarius-sdk.overlays.default
         inputs.librealsensex.overlays.default
         (final: prev: {
@@ -53,7 +48,6 @@
               };
             })
           ];
-          unitree-cli = final.callPackage ./nix/pkgs/unitree-cli {};
         })
       ];
     };
