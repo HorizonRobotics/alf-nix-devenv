@@ -33,6 +33,7 @@ in mkShell {
     mujoco-menagerie
     python-fcl
     sapien
+    pyopengl-accelerate
 
     # Physical Robot
     pyrealsense2WithoutCuda
