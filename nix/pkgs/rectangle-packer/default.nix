@@ -9,7 +9,7 @@ let pyVerNoDot = builtins.replaceStrings [ "." ] [ "" ] python.pythonVersion;
     
 in buildPythonPackage rec {
   pname = "rectangle-packer";
-  version = "2.0.1";
+  version = "2.0.2";
   format = "wheel";
 
   src = builtins.fetchurl (import ./wheel-urls.nix {
