@@ -2,11 +2,11 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     utils.url = "github:numtide/flake-utils";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/23.11";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
