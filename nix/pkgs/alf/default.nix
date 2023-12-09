@@ -41,8 +41,8 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "HorizonRobotics";
     repo = "alf";
-    rev = "46768eccf23ee1f6d1f728e7d54a41db7340f050";
-    hash = "sha256-ZozW6woTQJ2nZuhDn89oaembR0jHD5U6PAzcMdKR7ls=";
+    rev = "7bbf38ad5851f342106e2ecd3357a47901290fd5";
+    hash = "sha256-K77C9AcXJVQ17Qw2Mje0/S9rp0QGYGiL4Nqv0ky3vmU=";
   };
 
   nativeBuildInputs = [
