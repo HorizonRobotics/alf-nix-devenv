@@ -41,8 +41,10 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "HorizonRobotics";
     repo = "alf";
-    rev = "9a36744e341de1b8ed10099bdb31d203fd042b03";
-    hash = "sha256-d7EMzi2i7DjRT2nsV0KDLjK7LsS09Bn7hRoG+KrTwns=";
+    # This rev has an extra cherry-pick: Haonan's unsubmitted PR's commit
+    # "support alpha=0 for SAC", and therefore is temporary
+    rev = "401b7a78151353a5e4ee2603e096d326f34f11cf";
+    hash = "sha256-IB+wkMJbWwsdr3gTU+LP9jAQemG54mvlggAgQaqvzJU=";
   };
 
   nativeBuildInputs = [

@@ -94,6 +94,7 @@
         hobot-runtime = pkgs-hobot.callPackage ./nix/pkgs/hobot-runtime {
           useLegacyMujoco = false;
         };
+        alf = pkgs-alf.python3Packages.callPackage ./nix/pkgs/alf {};
       };
 
     });
