@@ -29,7 +29,7 @@ in mkShell {
     webcolors
 
     # Simulators
-    # mujoco-mjx
+    mujoco-mjx
     mujoco-menagerie
     python-fcl
     sapien
