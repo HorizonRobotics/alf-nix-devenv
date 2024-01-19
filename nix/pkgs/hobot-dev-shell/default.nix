@@ -77,6 +77,7 @@ in mkShell {
     ] else [
       mujoco-menagerie
       mujoco-pybind
+      mujoco-mjx
       dm-control
     ]
   )); in [
