@@ -2,11 +2,11 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs";
 
     utils.url = "github:numtide/flake-utils";
 
-    ml-pkgs.url = "github:nixvital/ml-pkgs";
+    ml-pkgs.url = "github:nixvital/ml-pkgs/dev/cuda12";
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
@@ -18,10 +18,6 @@
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
     sagittarius-sdk.inputs.utils.follows = "utils";
-
-    librealsensex.url = "github:HorizonRoboticsInternal/librealsense/PR/breakds/real_sense_sensor";
-    librealsensex.inputs.nixpkgs.follows = "nixpkgs";
-    librealsensex.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -29,6 +25,7 @@
       extra = import ./nix/overlays/extra.nix;
       alf = nixpkgs.lib.composeManyExtensions [
         inputs.ml-pkgs.overlays.torch-family
+        inputs.ml-pkgs.overlays.jax-family
         inputs.ml-pkgs.overlays.simulators
         inputs.tensor-splines.overlays.default
         self.overlays.extra
@@ -37,11 +34,9 @@
         self.overlays.alf
         inputs.ml-pkgs.overlays.math
         inputs.sagittarius-sdk.overlays.default
-        inputs.librealsensex.overlays.default
         (final: prev: {
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
             (python-final: python-prev: {
-              real-sense-sensor = python-final.callPackage ./nix/pkgs/real-sense-sensor {};
               alf = python-final.callPackage ./nix/pkgs/alf {};
               opencv4 = python-prev.opencv4.override {
                 enableCuda = false;

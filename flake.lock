@@ -1,29 +1,5 @@
 {
   "nodes": {
-    "librealsensex": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "utils": [
-          "utils"
-        ]
-      },
-      "locked": {
-        "lastModified": 1689191156,
-        "narHash": "sha256-3L+M3Bw5PZK+9HQt1F8JXp3FgjOVgYp8eHeA97e9Y7Q=",
-        "owner": "HorizonRoboticsInternal",
-        "repo": "librealsense",
-        "rev": "e28ef57016fc71985040e92e604914323fdf8ffe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HorizonRoboticsInternal",
-        "ref": "PR/breakds/real_sense_sensor",
-        "repo": "librealsense",
-        "type": "github"
-      }
-    },
     "ml-pkgs": {
       "inputs": {
         "nixpkgs": [
@@ -34,38 +10,37 @@
         ]
       },
       "locked": {
-        "lastModified": 1705944489,
-        "narHash": "sha256-x3GHrPbxLaWc/8ehgrHTWG+amKjg6x7H3G3Rp0VOBpc=",
+        "lastModified": 1706135221,
+        "narHash": "sha256-8j+lNR7GqaCteqYifUSaXwr2x9vLlxkTcI2PQrvvpzY=",
         "owner": "nixvital",
         "repo": "ml-pkgs",
-        "rev": "9e5a482ff115f551a50ec865c69d7ec132eb9c22",
+        "rev": "1f5a92abfdaf9fedf491f3450500f9a8265b8d4e",
         "type": "github"
       },
       "original": {
         "owner": "nixvital",
+        "ref": "dev/cuda12",
         "repo": "ml-pkgs",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1701389149,
-        "narHash": "sha256-rU1suTIEd5DGCaAXKW6yHoCfR1mnYjOXQFOaH7M23js=",
+        "lastModified": 1706125862,
+        "narHash": "sha256-ajF4JRzBhQr8UWS3v3YRHrx+IM0dAMGMArDA+zC/yLo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5de0b32be6e85dc1a9404c75131316e4ffbc634c",
+        "rev": "31787848d1820cfe1991c112621d577476c23d2e",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-23.11",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "librealsensex": "librealsensex",
         "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "sagittarius-sdk": "sagittarius-sdk",

@@ -9,7 +9,8 @@
 , libGLU
 , cpplint
 , useLegacyMujoco ? false
-, withRealSense ? true}:
+}:
+
 
 let libPath = lib.makeLibraryPath [
       libGL
@@ -29,14 +30,9 @@ in mkShell {
     webcolors
 
     # Simulators
-    mujoco-mjx
-    mujoco-menagerie
     python-fcl
     sapien
     pyopengl-accelerate
-
-    # Physical Robot
-    pyrealsense2WithoutCuda
 
     # Models
     LIV-robotics
@@ -52,7 +48,7 @@ in mkShell {
     pylint
     pudb
     rich
-    pytorchvizWithCuda11
+    torchWithCuda
     pre-commit
     bokeh
     snakeviz
@@ -65,10 +61,6 @@ in mkShell {
     loguru
     wget
     xmltodict
-
-    # Deployment
-    pyrealsense2WithoutCuda
-    real-sense-sensor
   ] ++ (
     if useLegacyMujoco then [
       mujoco-menagerie
