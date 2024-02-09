@@ -8,6 +8,8 @@
 , libGL
 , libGLU
 , cpplint
+, pkg-config
+, gst_all_1
 , useLegacyMujoco ? false
 }:
 
@@ -78,6 +80,15 @@ in mkShell {
     cpplint
     libGL
     libGLU
+
+    # gstreamer
+    pkg-config    
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base  # appsrc
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav         # avdec_h264
   ];
 
   LD_LIBRARY_PATH = libPath;
