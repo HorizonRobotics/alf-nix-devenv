@@ -63,6 +63,7 @@ in mkShell {
     loguru
     wget
     xmltodict
+    fastapi
   ] ++ (
     if useLegacyMujoco then [
       mujoco-menagerie
