@@ -64,6 +64,8 @@ in mkShell {
     wget
     xmltodict
     fastapi
+    uvicorn
+    websockets
   ] ++ (
     if useLegacyMujoco then [
       mujoco-menagerie
