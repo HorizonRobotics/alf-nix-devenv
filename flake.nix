@@ -18,6 +18,10 @@
     sagittarius-sdk.url = "git+ssh://git@github.com/HorizonRoboticsInternal/sagittarius-sdk";
     sagittarius-sdk.inputs.nixpkgs.follows = "nixpkgs";
     sagittarius-sdk.inputs.utils.follows = "utils";
+
+    kincpp.url = "git+ssh://git@github.com/HorizonRoboticsInternal/kincpp?ref=main";
+    kincpp.inputs.nixpkgs.follows = "nixpkgs";
+    kincpp.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -34,6 +38,7 @@
         self.overlays.alf
         inputs.ml-pkgs.overlays.math
         inputs.sagittarius-sdk.overlays.default
+        inputs.kincpp.overlays.default
         (final: prev: {
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
             (python-final: python-prev: {

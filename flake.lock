@@ -1,5 +1,29 @@
 {
   "nodes": {
+    "kincpp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709764212,
+        "narHash": "sha256-IGotODapRTn0wgeNhDXnSCE/Obc1ygrbYLVY/NmRurA=",
+        "ref": "main",
+        "rev": "fdf8732c993c1aa29fb0b5b11456e50d03749987",
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/kincpp"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.com/HorizonRoboticsInternal/kincpp"
+      }
+    },
     "ml-pkgs": {
       "inputs": {
         "nixpkgs": [
@@ -42,6 +66,7 @@
     },
     "root": {
       "inputs": {
+        "kincpp": "kincpp",
         "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "sagittarius-sdk": "sagittarius-sdk",

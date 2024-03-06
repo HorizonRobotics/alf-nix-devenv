@@ -30,6 +30,7 @@ in mkShell {
     jinja2
     scikit-image
     webcolors
+    kincpp
 
     # Simulators
     python-fcl
