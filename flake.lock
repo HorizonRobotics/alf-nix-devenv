@@ -34,16 +34,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1707891517,
-        "narHash": "sha256-yUo7vrAkDoGmrfg3F006UM85t0pZTa/NxNePVmRxh8U=",
+        "lastModified": 1710265410,
+        "narHash": "sha256-z+fhazJ7v2BSCtD6k/yKtWrRaDnQlkJjs0VYakG6fSc=",
         "owner": "nixvital",
         "repo": "ml-pkgs",
-        "rev": "d1c44cd30d6371137bb3d27f5750e11859c569ae",
+        "rev": "1c6e3beffd651f4af2d76c4f0bf95fcd3fd51cfe",
         "type": "github"
       },
       "original": {
         "owner": "nixvital",
-        "ref": "dev/cuda11",
         "repo": "ml-pkgs",
         "type": "github"
       }
