@@ -40,8 +40,8 @@ buildPythonPackage rec {
     repo = "alf";
     # This rev has an extra cherry-pick: Haonan's unsubmitted PR's commit
     # "support alpha=0 for SAC", and therefore is temporary
-    rev = "39c01868ba3077c58beff155e8869d3503fb7362";
-    hash = "sha256-5Yn2AzEo/WpNaJ9/8lWsc/9ceZNDP0QRNx2fLy2MqeA=";
+    rev = "f55d6c46a1c7a542e0c98b8255799e1a3f6e0a01";
+    hash = "sha256-rM1CqEkJkjdoKLA2YlLi4WFJ5k27OcbtzpqZEeSPvIM=";
   };
 
   nativeBuildInputs = [
