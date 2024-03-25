@@ -55,6 +55,9 @@ in mkShell {
     pre-commit
     bokeh
     snakeviz
+    jax
+    equinox
+    jaxtyping
 
     # Application Libraries (Optional)
     tkinter
