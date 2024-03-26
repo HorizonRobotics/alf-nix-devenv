@@ -58,6 +58,7 @@ in mkShell {
     jax
     equinox
     jaxtyping
+    chex
 
     # Application Libraries (Optional)
     tkinter
