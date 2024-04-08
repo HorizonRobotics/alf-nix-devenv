@@ -36,6 +36,7 @@ in mkShell {
     python-fcl
     sapien
     pyopengl-accelerate
+    procthor
 
     # Models
     LIV-robotics
