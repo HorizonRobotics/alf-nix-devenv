@@ -41,6 +41,9 @@ in mkShell {
     # Models
     LIV-robotics
 
+    # Deployment
+    pyrealsense2WithoutCuda    
+
     # Deveopment Tools
     sphinx
     sphinx_rtd_theme
