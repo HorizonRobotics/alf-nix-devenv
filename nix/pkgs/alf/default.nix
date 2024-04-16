@@ -29,6 +29,7 @@
 , procgen
 , highway-env
 , metadrive-simulator
+, threadpoolctl
 }:
 
 buildPythonPackage rec {
@@ -40,8 +41,8 @@ buildPythonPackage rec {
     repo = "alf";
     # This rev has an extra cherry-pick: Haonan's unsubmitted PR's commit
     # "support alpha=0 for SAC", and therefore is temporary
-    rev = "c029aa2eee19e3e89a95048fab827b40a9630565";
-    hash = "sha256-411HdQtoG51sQYgv9C7xIT32xKthG0213q02quru0Sc=";
+    rev = "6d99ea52567e03554927b98f1942cf905a49657d";
+    hash = "sha256-+RfMcTwwYbgqV4+W/IAy1C2TofqQBo26ibHOrkCeTD8=";
   };
 
   nativeBuildInputs = [
@@ -92,6 +93,7 @@ buildPythonPackage rec {
     pybox2d
     matplotlib
     tqdm
+    threadpoolctl
 
     # Simulators
     gym
