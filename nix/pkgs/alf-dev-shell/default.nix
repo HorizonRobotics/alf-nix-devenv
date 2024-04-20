@@ -37,6 +37,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # torchtext (0.9.1)
 
       pydantic
+      threadpoolctl
 
       # Simulators
       atari-py-with-rom
