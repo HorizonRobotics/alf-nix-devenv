@@ -10,8 +10,8 @@
 
 let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       # For both Dev and Deploy
-      pytorchWithCuda11
-      torchvisionWithCuda11
+      torchWithCuda
+      torchvision
       numpy pandas absl-py
       gym
       # TODO(breakds): Require pyglet 1.3.2, because higher version
@@ -54,7 +54,7 @@ let pythonForAlf = python3.withPackages (pyPkgs: with pyPkgs; [
       pylint
       pudb
       rich
-      pytorchvizWithCuda11
+      pytorchviz
       pre-commit
       pybind11  # for _penv
     ]);
