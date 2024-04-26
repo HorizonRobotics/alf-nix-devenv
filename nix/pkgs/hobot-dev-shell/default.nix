@@ -10,6 +10,7 @@
 , cpplint
 , pkg-config
 , gst_all_1
+, stream-zed
 , useLegacyMujoco ? false
 }:
 
@@ -101,6 +102,9 @@ in mkShell {
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav         # avdec_h264
+
+    # ZED Mini streaming tools
+    stream-zed
   ];
 
   LD_LIBRARY_PATH = libPath;

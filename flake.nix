@@ -40,6 +40,7 @@
         inputs.sagittarius-sdk.overlays.default
         inputs.kincpp.overlays.default
         (final: prev: {
+          stream-zed = final.callPackage ./nix/pkgs/stream-zed {};
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
             (python-final: python-prev: {
               alf = python-final.callPackage ./nix/pkgs/alf {};
