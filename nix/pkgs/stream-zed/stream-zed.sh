@@ -17,7 +17,7 @@ function run() {
 
     gst-launch-1.0 -v v4l2src device=/dev/video0 \
                    ! video/x-raw,format=YUY2,width=1344,height=376,framerate="${fps}"/1 \
-                   ! shmsink socket-path=/tmp/zed_camera_frames sync=true \
+                   ! shmsink socket-path=/tmp/zed_camera_frames \
                    wait-for-connection=true shm-size=10000000
 }
 
