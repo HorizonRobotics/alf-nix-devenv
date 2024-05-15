@@ -46,6 +46,7 @@
               alf = python-final.callPackage ./nix/pkgs/alf {};
               opencv4 = python-prev.opencv4.override {
                 enableCuda = false;
+                enableGtk3 = true;
               };
             })
           ];
