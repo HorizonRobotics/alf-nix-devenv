@@ -8,6 +8,7 @@
 , libGL
 , libGLU
 , cpplint
+, pylyzer
 , pkg-config
 , gst_all_1
 , stream-zed
@@ -90,6 +91,7 @@ in mkShell {
   )); in [
     pythonDevEnv
     nodePackages.pyright
+    pylyzer
     cpplint
     libGL
     libGLU
