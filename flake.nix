@@ -2,7 +2,7 @@
   description = "Agent Learning Framework Development Environment";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     utils.url = "github:numtide/flake-utils";
 
@@ -73,7 +73,7 @@
             allowUnfree = true;
             cudaSupport = true;
             cudaCapabilities = [ "7.5" "8.6" ];
-            cudaForwardCompat = false;
+            cudaForwardCompat = true;
           };
           overlays = [
             self.overlays.hobot
@@ -82,9 +82,7 @@
     in {
       devShells = {
         alf-dev = pkgs-alf.callPackage ./nix/pkgs/alf-dev-shell {};
-        hobot-dev = pkgs-hobot.callPackage ./nix/pkgs/hobot-dev-shell {
-          useLegacyMujoco = false;
-        };
+        hobot-dev = pkgs-hobot.callPackage ./nix/pkgs/hobot-dev-shell {};
       };
 
       packages = {

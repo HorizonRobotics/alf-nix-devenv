@@ -12,7 +12,7 @@
 , pkg-config
 , gst_all_1
 , stream-zed
-, useLegacyMujoco ? false
+, pre-commit
 }:
 
 
@@ -38,7 +38,6 @@ in mkShell {
     python-fcl
     sapien
     pyopengl-accelerate
-    procthor
 
     # Models
     LIV-robotics
@@ -58,7 +57,6 @@ in mkShell {
     pudb
     rich
     torchWithCuda
-    pre-commit
     bokeh
     snakeviz
     jax
@@ -77,19 +75,15 @@ in mkShell {
     fastapi
     uvicorn
     websockets
-  ] ++ (
-    if useLegacyMujoco then [
-      mujoco-menagerie
-      mujoco-pybind-231
-      dm-control-109
-    ] else [
-      mujoco-menagerie
-      mujoco-pybind
-      mujoco-mjx
-      dm-control
-    ]
-  )); in [
+
+    # MuJoCo Family
+    mujoco-menagerie
+    mujoco
+    mujoco-mjx
+    dm-control
+  ]); in [
     pythonDevEnv
+    pre-commit
     nodePackages.pyright
     pylyzer
     cpplint
