@@ -43,7 +43,9 @@ in mkShell {
     LIV-robotics
 
     # Deployment
-    pyrealsense2WithoutCuda    
+    pyrealsense2WithoutCuda
+    pyserial
+    pymavlink
 
     # Deveopment Tools
     sphinx
@@ -91,7 +93,7 @@ in mkShell {
     libGLU
 
     # gstreamer
-    pkg-config    
+    pkg-config
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base  # appsrc
     gst_all_1.gst-plugins-good
