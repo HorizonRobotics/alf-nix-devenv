@@ -22,6 +22,10 @@
     kincpp.url = "git+ssh://git@github.com/HorizonRoboticsInternal/kincpp?ref=main";
     kincpp.inputs.nixpkgs.follows = "nixpkgs";
     kincpp.inputs.utils.follows = "utils";
+
+    relaxed-ik.url = "github:breakds/relaxed_ik_core";
+    relaxed-ik.inputs.nixpkgs.follows = "nixpkgs";
+    relaxed-ik.inputs.utils.follows = "utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -39,6 +43,7 @@
         inputs.ml-pkgs.overlays.math
         inputs.sagittarius-sdk.overlays.default
         inputs.kincpp.overlays.default
+        inputs.relaxed-ik.overlays.default
         (final: prev: {
           stream-zed = final.callPackage ./nix/pkgs/stream-zed {};
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [

@@ -66,6 +66,9 @@ in mkShell {
     jaxtyping
     chex
 
+    # Teleoperation
+    relaxed-ik
+
     # Application Libraries (Optional)
     tkinter
     websocket-client
