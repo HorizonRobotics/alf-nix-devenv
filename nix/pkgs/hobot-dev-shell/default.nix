@@ -107,6 +107,9 @@ in mkShell {
 
     # ZED Mini streaming tools
     stream-zed
+
+    # Build Tools
+    cmake
   ];
 
   LD_LIBRARY_PATH = libPath;
