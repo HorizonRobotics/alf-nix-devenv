@@ -12,6 +12,7 @@
 , pkg-config
 , gst_all_1
 , stream-zed
+, cmake
 , useLegacyMujoco ? false
 }:
 
