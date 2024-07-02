@@ -13,6 +13,7 @@
 , gst_all_1
 , stream-zed
 , pre-commit
+, cmake
 }:
 
 
@@ -106,6 +107,9 @@ in mkShell {
 
     # ZED Mini streaming tools
     stream-zed
+
+    # Build Tools
+    cmake
   ];
 
   LD_LIBRARY_PATH = libPath;
