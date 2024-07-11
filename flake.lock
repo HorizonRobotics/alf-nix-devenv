@@ -144,11 +144,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720637809,
-        "narHash": "sha256-uBkLt7oHWfzcE3+6LxAwnf727b0mKk9Adwjqrt4FZss=",
+        "lastModified": 1720717029,
+        "narHash": "sha256-tTpZHtuqnviNqmB+iMHnR7KfOvplrEzhdlBx15wr8rs=",
         "owner": "breakds",
         "repo": "relaxed_ik_core",
-        "rev": "3e59290b08d118f89a57cce110b8f0c5174d025a",
+        "rev": "0c38cedec1a2120a2aec6756067d027389a13825",
         "type": "github"
       },
       "original": {
