@@ -100,6 +100,8 @@
           useLegacyMujoco = false;
         };
         alf = pkgs-alf.python3Packages.callPackage ./nix/pkgs/alf {};
+
+        hobot-docker = pkgs-hobot.callPackage ./nix/dockers/hobot.nix {};
       };
     });
 }
