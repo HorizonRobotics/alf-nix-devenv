@@ -10,6 +10,10 @@
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
+    alf.url = "flake:alf";
+    alf.inputs.nixpkgs.follows = "nixpkgs";
+    alf.inputs.ml-pkgs.follows = "ml-pkgs";
+
     tensor-splines.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";
     tensor-splines.inputs.utils.follows = "utils";
@@ -28,18 +32,11 @@
     relaxed-ik.inputs.utils.follows = "utils";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, alf, ... }@inputs: {
     overlays = {
-      extra = import ./nix/overlays/extra.nix;
-      alf = nixpkgs.lib.composeManyExtensions [
-        inputs.ml-pkgs.overlays.torch-family
-        inputs.ml-pkgs.overlays.jax-family
-        inputs.ml-pkgs.overlays.simulators
-        inputs.tensor-splines.overlays.default
-        self.overlays.extra
-      ];
       hobot = nixpkgs.lib.composeManyExtensions [
-        self.overlays.alf
+        alf.overlays.default
+        inputs.ml-pkgs.overlays.jax-family        
         inputs.ml-pkgs.overlays.math
         inputs.sagittarius-sdk.overlays.default
         inputs.kincpp.overlays.default
@@ -48,7 +45,6 @@
           stream-zed = final.callPackage ./nix/pkgs/stream-zed {};
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
             (python-final: python-prev: {
-              alf = python-final.callPackage ./nix/pkgs/alf {};
               opencv4 = python-prev.opencv4.override {
                 enableCuda = false;
                 enableGtk3 = true;
@@ -61,18 +57,8 @@
   } // inputs.utils.lib.eachSystem [
     "x86_64-linux"
   ] (system:
-    let pkgs-alf = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-            cudaSupport = true;
-            cudaCapabilities = [ "7.5" "8.6" ];
-            cudaForwardCompat = false;
-          };
-          overlays = [ self.overlays.alf ];
-        };
-
-        pkgs-hobot = import nixpkgs {
+   
+    let pkgs-hobot = import nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;
@@ -86,7 +72,6 @@
         };
     in {
       devShells = {
-        alf-dev = pkgs-alf.callPackage ./nix/pkgs/alf-dev-shell {};
         hobot-dev = pkgs-hobot.callPackage ./nix/pkgs/hobot-dev-shell {};
       };
 
@@ -99,7 +84,6 @@
         hobot-runtime = pkgs-hobot.callPackage ./nix/pkgs/hobot-runtime {
           useLegacyMujoco = false;
         };
-        alf = pkgs-alf.python3Packages.callPackage ./nix/pkgs/alf {};
 
         hobot-docker = pkgs-hobot.callPackage ./nix/dockers/hobot.nix {};
       };

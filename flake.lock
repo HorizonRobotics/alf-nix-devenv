@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "alf": {
+      "inputs": {
+        "ml-pkgs": [
+          "ml-pkgs"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1720827252,
+        "narHash": "sha256-eGv1hn8y61NZqsgWlVftckIKo1l7V1M4yApnixWMuo8=",
+        "path": "/home/breakds/projects/alf",
+        "type": "path"
+      },
+      "original": {
+        "id": "alf",
+        "type": "indirect"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -159,13 +180,14 @@
     },
     "root": {
       "inputs": {
+        "alf": "alf",
         "kincpp": "kincpp",
         "ml-pkgs": "ml-pkgs",
         "nixpkgs": "nixpkgs",
         "relaxed-ik": "relaxed-ik",
         "sagittarius-sdk": "sagittarius-sdk",
         "tensor-splines": "tensor-splines",
-        "utils": "utils"
+        "utils": "utils_2"
       }
     },
     "rust-overlay": {
@@ -252,6 +274,21 @@
       }
     },
     "utils": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_2": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
