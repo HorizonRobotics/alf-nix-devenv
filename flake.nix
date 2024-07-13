@@ -10,9 +10,13 @@
     ml-pkgs.inputs.nixpkgs.follows = "nixpkgs";
     ml-pkgs.inputs.utils.follows = "utils";
 
-    alf.url = "flake:alf";
+    # Normally we use alf from a commit. In case you want to use a local alf
+    # repo, commnet the following line and uncomment the line below it.
+    alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged";
+    # alf.url = "git+file:///home/breakds/projects/alf";
     alf.inputs.nixpkgs.follows = "nixpkgs";
     alf.inputs.ml-pkgs.follows = "ml-pkgs";
+    alf.inputs.utils.follows = "utils";
 
     tensor-splines.url = "git+ssh://git@github.com/HorizonRobotics/tensor-splines?ref=main";
     tensor-splines.inputs.nixpkgs.follows = "nixpkgs";

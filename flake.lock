@@ -8,17 +8,23 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "utils": "utils"
+        "utils": [
+          "utils"
+        ]
       },
       "locked": {
-        "lastModified": 1720827252,
-        "narHash": "sha256-eGv1hn8y61NZqsgWlVftckIKo1l7V1M4yApnixWMuo8=",
-        "path": "/home/breakds/projects/alf",
-        "type": "path"
+        "lastModified": 1720827248,
+        "narHash": "sha256-Q+RF9D7gV1xx+GmPHhhvMYhfflXl08OYDmJm/puVEbE=",
+        "owner": "HorizonRobotics",
+        "repo": "alf",
+        "rev": "7c4532c3e1912d5e97d5870aea059d58ab4f5711",
+        "type": "github"
       },
       "original": {
-        "id": "alf",
-        "type": "indirect"
+        "owner": "HorizonRobotics",
+        "ref": "PR/breakds/alf_packaged",
+        "repo": "alf",
+        "type": "github"
       }
     },
     "devshell": {
@@ -187,7 +193,7 @@
         "relaxed-ik": "relaxed-ik",
         "sagittarius-sdk": "sagittarius-sdk",
         "tensor-splines": "tensor-splines",
-        "utils": "utils_2"
+        "utils": "utils"
       }
     },
     "rust-overlay": {
@@ -274,21 +280,6 @@
       }
     },
     "utils": {
-      "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_2": {
       "locked": {
         "lastModified": 1623875721,
         "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
