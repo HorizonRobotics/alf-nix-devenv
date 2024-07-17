@@ -62,10 +62,10 @@ in mkShell {
     torchWithCuda
     bokeh
     snakeviz
-    jax
-    equinox
-    jaxtyping
-    chex
+    # jax
+    # equinox
+    # jaxtyping
+    # chex
 
     # Teleoperation
     relaxed-ik
@@ -85,7 +85,7 @@ in mkShell {
     # MuJoCo Family
     mujoco-menagerie
     mujoco
-    mujoco-mjx
+    # mujoco-mjx
     dm-control
   ]); in [
     pythonDevEnv
