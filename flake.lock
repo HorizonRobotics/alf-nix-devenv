@@ -13,11 +13,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720827248,
-        "narHash": "sha256-Q+RF9D7gV1xx+GmPHhhvMYhfflXl08OYDmJm/puVEbE=",
+        "lastModified": 1722640792,
+        "narHash": "sha256-BaIxCMxKjHvJUMnXH0hAAwyctHuX71VS0Wc/d4uW8Hs=",
         "owner": "HorizonRobotics",
         "repo": "alf",
-        "rev": "7c4532c3e1912d5e97d5870aea059d58ab4f5711",
+        "rev": "a0ae341d4c5affd8391a8fff7eccff1edca84502",
         "type": "github"
       },
       "original": {
