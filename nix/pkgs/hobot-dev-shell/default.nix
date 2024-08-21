@@ -48,6 +48,9 @@ in mkShell {
     pyserial
     pymavlink
 
+    onnx
+    onnxruntime
+
     # Deveopment Tools
     sphinx
     sphinx_rtd_theme
