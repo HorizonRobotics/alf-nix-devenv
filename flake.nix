@@ -12,7 +12,7 @@
 
     # Normally we use alf from a commit. In case you want to use a local alf
     # repo, commnet the following line and uncomment the line below it.
-    alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged";
+    alf.url = "github:HorizonRobotics/alf/PR/breakds/alf_packaged_new";
     # alf.url = "git+file:///home/breakds/projects/alf";
     alf.inputs.nixpkgs.follows = "nixpkgs";
     alf.inputs.ml-pkgs.follows = "ml-pkgs";
